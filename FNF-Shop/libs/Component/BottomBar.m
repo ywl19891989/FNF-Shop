@@ -21,17 +21,17 @@
 
 - (id)init
 {
-    float originHeight = 50;
+    float originHeight = 30;
     float scale = 1;
     self = [super initWithFrame:CGRectMake(0, 0, 320, originHeight * scale)];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
         UIColor* bgColor = SELECT_COLOR;
-        NSArray* normalBtnImg = [[NSArray alloc] initWithObjects:@"home_icon.png", @"user_icon.png", nil];
-        NSArray* selectBtnImg = [[NSArray alloc] initWithObjects:@"home_icon.png", @"user_icon.png", nil];
+        NSArray* normalBtnImg = [[NSArray alloc] initWithObjects:@"bottom_home1.png", @"bottom_message1.png", nil];
+        NSArray* selectBtnImg = [[NSArray alloc] initWithObjects:@"bottom_home2.png", @"bottom_message2.png", nil];
         for (int i = 0; i < [normalBtnImg count]; i++) {
             float btnW = 320.0f / [normalBtnImg count];
-            _menuBtn[i] = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btnW, 80)];
+            _menuBtn[i] = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btnW, 30)];
             _menuBtn[i].tag = i;
             _menuBtn[i].backgroundColor = bgColor;
             UIImage* normal = [UIImage imageNamed:[normalBtnImg objectAtIndex:i]];
@@ -56,15 +56,11 @@
     
     if (tag == 0)
     {
-        [AppDelegate jumpToMain];
+        [AppDelegate jumpToUserView];
     }
     else if (tag == 1)
     {
-        if ([NetWorkManager GetUserId] == nil) {
-            [AppDelegate jumpToMain];
-        } else {
-//            [AppDelegate jumpToUser];
-        }
+        
     }
 }
 
