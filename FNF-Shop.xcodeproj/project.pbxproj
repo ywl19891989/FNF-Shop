@@ -1285,6 +1285,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: soft haofeng (Y2PP433LBV)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: soft haofeng (Y2PP433LBV)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1303,7 +1304,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "2a8a64b1-54cb-4201-ad19-ff8d40e33b13";
+				PROVISIONING_PROFILE = "b35904b7-1370-4ffc-bc79-c495e1b55c5d";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -1325,7 +1326,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: soft haofeng (BW9H4H538A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: soft haofeng (BW9H4H538A)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1336,7 +1338,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "2a8a64b1-54cb-4201-ad19-ff8d40e33b13";
+				PROVISIONING_PROFILE = "aa4e32e1-e7cb-4f9f-978e-806703a2e5f3";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -1373,7 +1375,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "FNF-Shop";
-				PROVISIONING_PROFILE = "bc208d46-efa0-47e4-bf6e-14336d4a3bd6";
+				PROVISIONING_PROFILE = "b35904b7-1370-4ffc-bc79-c495e1b55c5d";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1384,8 +1386,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer: soft haofeng (Y2PP433LBV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: soft haofeng (Y2PP433LBV)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: soft haofeng (BW9H4H538A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: soft haofeng (BW9H4H538A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FNF-Shop/libs/alipay",
@@ -1408,7 +1410,7 @@
 					"$(PROJECT_DIR)/FNF-Shop/libs/JPush",
 				);
 				PRODUCT_NAME = "FNF-Shop";
-				PROVISIONING_PROFILE = "bc208d46-efa0-47e4-bf6e-14336d4a3bd6";
+				PROVISIONING_PROFILE = "aa4e32e1-e7cb-4f9f-978e-806703a2e5f3";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};

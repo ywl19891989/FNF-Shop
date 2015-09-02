@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>FNF司机端</string>
+	<string>FNF商家版</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFiles</key>
@@ -14,7 +14,7 @@
 		<string>icon-57@2x.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
-	<string>com.haofengsoft.fnf-shop</string>
+	<string>com.haofeng.fnf-shop</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>

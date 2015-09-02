@@ -53,7 +53,7 @@
             if (data) {
                 NSMutableDictionary* realData = [NSMutableDictionary dictionaryWithDictionary:data];
                 [NetWorkManager SetUserInfo:realData];
-                [AppDelegate jumpToMain];
+                [AppDelegate jumpToUserView];
             }
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
