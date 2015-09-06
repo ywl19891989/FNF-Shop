@@ -57,9 +57,9 @@
     canlendarView.delegate = self;
     [canlendarView setHidden:YES];
     
-    m_iSelectCout = 0;
-    [self.selectDateLabel setText:@""];
-    [self.totalNumLabel setText:@""];
+    m_iSelectCout = 1;
+    m_pStartDate = [NSDate date];
+    [self calendar:nil didSelectDate:[NSDate date]];
 }
 
 - (void)calendar:(CKCalendarView *)calendar didSelectDate:(NSDate *)date

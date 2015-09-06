@@ -134,8 +134,7 @@
 }
 
 - (id)initWithStartDay:(startDay)firstDay {
-    self.calendarStartDay = firstDay;
-    return [self initWithFrame:CGRectMake(0, 0, 320, 320)];
+    return [self initWithStartDay:firstDay frame:CGRectMake(0, 0, 320, 320)];
 }
 
 - (id)initWithStartDay:(startDay)firstDay frame:(CGRect)frame {
@@ -166,7 +165,7 @@
 
         // SET UP THE HEADER
         UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-        titleLabel.textAlignment = UITextAlignmentCenter;
+        titleLabel.textAlignment = NSTextAlignmentCenter;
         titleLabel.backgroundColor = [UIColor clearColor];
         titleLabel.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
         [self addSubview:titleLabel];
@@ -205,7 +204,7 @@
         for (NSString *day in [self getDaysOfTheWeek]) {
             UILabel *dayOfWeekLabel = [[UILabel alloc] initWithFrame:CGRectZero];
             dayOfWeekLabel.text = [day uppercaseString];
-            dayOfWeekLabel.textAlignment = UITextAlignmentCenter;
+            dayOfWeekLabel.textAlignment = NSTextAlignmentCenter;
             dayOfWeekLabel.backgroundColor = [UIColor clearColor];
             dayOfWeekLabel.shadowColor = [UIColor whiteColor];
             dayOfWeekLabel.shadowOffset = CGSizeMake(0, 1);
@@ -241,7 +240,6 @@
     self.cellWidth = (containerWidth / 7.0) - CELL_BORDER_WIDTH;
 
     CGFloat containerHeight = ([self numberOfWeeksInMonthContainingDate:self.monthShowing] * (self.cellWidth + CELL_BORDER_WIDTH) + DAYS_HEADER_HEIGHT);
-
 
     CGRect newFrame = self.frame;
     newFrame.size.height = containerHeight + CALENDAR_MARGIN + TOP_HEIGHT;
@@ -352,6 +350,7 @@
 - (void)setTitleFont:(UIFont *)font {
     self.titleLabel.font = font;
 }
+
 - (UIFont *)titleFont {
     return self.titleLabel.font;
 }
@@ -359,6 +358,7 @@
 - (void)setTitleColor:(UIColor *)color {
     self.titleLabel.textColor = color;
 }
+
 - (UIColor *)titleColor {
     return self.titleLabel.textColor;
 }
@@ -377,6 +377,7 @@
         label.font = font;
     }
 }
+
 - (UIFont *)dayOfWeekFont {
     return (self.dayOfWeekLabels.count > 0) ? ((UILabel *)[self.dayOfWeekLabels lastObject]).font : nil;
 }
@@ -386,6 +387,7 @@
         label.textColor = color;
     }
 }
+
 - (UIColor *)dayOfWeekTextColor {
     return (self.dayOfWeekLabels.count > 0) ? ((UILabel *)[self.dayOfWeekLabels lastObject]).textColor : nil;
 }
@@ -399,6 +401,7 @@
         dateButton.titleLabel.font = font;
     }
 }
+
 - (UIFont *)dateFont {
     return (self.dateButtons.count > 0) ? ((DateButton *)[self.dateButtons lastObject]).titleLabel.font : nil;
 }
@@ -408,6 +411,7 @@
         [dateButton setTitleColor:color forState:UIControlStateNormal];
     }
 }
+
 - (UIColor *)dateTextColor {
     return (self.dateButtons.count > 0) ? [((DateButton *)[self.dateButtons lastObject]) titleColorForState:UIControlStateNormal] : nil;
 }
@@ -417,6 +421,7 @@
         dateButton.backgroundColor = color;
     }
 }
+
 - (UIColor *)dateBackgroundColor {
     return (self.dateButtons.count > 0) ? ((DateButton *)[self.dateButtons lastObject]).backgroundColor : nil;
 }
@@ -424,6 +429,7 @@
 - (void)setDateBorderColor:(UIColor *)color {
     self.calendarContainer.backgroundColor = color;
 }
+
 - (UIColor *)dateBorderColor {
     return self.calendarContainer.backgroundColor;
 }
@@ -452,7 +458,7 @@
 
 - (int)dayOfWeekForDate:(NSDate *)date {
     NSDateComponents *comps = [self.calendar components:NSWeekdayCalendarUnit fromDate:date];
-    return comps.weekday;
+    return (int)comps.weekday;
 }
 
 - (BOOL)dateIsToday:(NSDate *)date {
@@ -466,11 +472,11 @@
 
 - (int)weekNumberInMonthForDate:(NSDate *)date {
     NSDateComponents *comps = [self.calendar components:(NSWeekOfMonthCalendarUnit) fromDate:date];
-    return comps.weekOfMonth;
+    return (int)comps.weekOfMonth;
 }
 
 - (int)numberOfWeeksInMonthContainingDate:(NSDate *)date {
-    return [self.calendar rangeOfUnit:NSWeekCalendarUnit inUnit:NSMonthCalendarUnit forDate:date].length;
+    return (int)[self.calendar rangeOfUnit:NSWeekCalendarUnit inUnit:NSMonthCalendarUnit forDate:date].length;
 }
 
 - (BOOL)dateIsInMonthShowing:(NSDate *)date {

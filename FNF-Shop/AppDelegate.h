@@ -18,6 +18,9 @@
 + (void) jumpToOrderDetail;
 + (void) jumpToUserView;
 + (void) jumpToTransaction;
++ (void) jumpToWeb1;
++ (void) jumpToWeb2;
++ (void) jumpToMsgList;
 
 + (void) ShowTips:(NSString*)tipsText;
 + (void) ShowToast:(NSString*)toastText;

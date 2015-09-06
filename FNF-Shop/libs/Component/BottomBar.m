@@ -21,7 +21,7 @@
 
 - (id)init
 {
-    float originHeight = 50;
+    float originHeight = 38;
     float scale = 1;
     self = [super initWithFrame:CGRectMake(0, 0, 320, originHeight * scale)];
     if (self) {
@@ -31,7 +31,7 @@
         NSArray* selectBtnImg = [[NSArray alloc] initWithObjects:@"bottom_home2.png", @"bottom_message2.png", nil];
         for (int i = 0; i < [normalBtnImg count]; i++) {
             float btnW = 320.0f / [normalBtnImg count];
-            _menuBtn[i] = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btnW, 50)];
+            _menuBtn[i] = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, btnW, 38)];
             _menuBtn[i].tag = i;
             _menuBtn[i].backgroundColor = bgColor;
             UIImage* normal = [UIImage imageNamed:[normalBtnImg objectAtIndex:i]];
@@ -60,7 +60,7 @@
     }
     else if (tag == 1)
     {
-        
+        [AppDelegate jumpToMsgList];
     }
 }
 

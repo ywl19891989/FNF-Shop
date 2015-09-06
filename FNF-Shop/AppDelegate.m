@@ -17,6 +17,9 @@
 #import "LoginView.h"
 #import "TransactionView.h"
 #import "UserView.h"
+#import "WebView.h"
+#import "WebView2.h"
+#import "MessageList.h"
 
 @implementation AppDelegate
 
@@ -31,6 +34,9 @@ static UIWindow* mainWindow;
 + (void)jumpToOrderDetail {  CREATE_VIEW(OrderDetail); }
 + (void)jumpToUserView {  CREATE_VIEW(UserView); }
 + (void)jumpToTransaction {  CREATE_VIEW(TransactionView); }
++ (void)jumpToWeb1 {  CREATE_VIEW(WebView); }
++ (void)jumpToWeb2 {  CREATE_VIEW(WebView2); }
++ (void)jumpToMsgList { CREATE_VIEW(MessageList); }
 
 + (void)ShowTips:(NSString*)tipText
 {

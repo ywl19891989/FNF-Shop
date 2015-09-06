@@ -64,7 +64,7 @@
                     <color key="backgroundColor" red="0.2470588235" green="0.60784313729999995" blue="0.78823529410000004" alpha="1" colorSpace="deviceRGB"/>
                 </view>
                 <view contentMode="scaleToFill" id="n4R-fk-Xzd">
-                    <rect key="frame" x="0.0" y="40" width="320" height="478"/>
+                    <rect key="frame" x="0.0" y="40" width="320" height="470"/>
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015.07.12 - 2015.08.10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qJp-IG-Lp1">
@@ -103,12 +103,12 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="HTn-Sa-nD5" customClass="TableViewWithBlock">
-                            <rect key="frame" x="0.0" y="77" width="320" height="381"/>
+                            <rect key="frame" x="0.0" y="77" width="320" height="373"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </tableView>
                         <view alpha="0.80000000000000027" contentMode="scaleToFill" id="eGR-eX-rBE">
-                            <rect key="frame" x="0.0" y="444" width="320" height="34"/>
+                            <rect key="frame" x="0.0" y="436" width="320" height="34"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="agF-9d-gBA">

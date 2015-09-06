@@ -309,9 +309,30 @@ static SecKeyRef _public_key=nil;
 
     NSMutableDictionary* param = [NSMutableDictionary dictionaryWithCapacity:10];
     [param setValue:startDate forKey:@"BTime"]; //    开始时间
+    if ([endDate isEqualToString:startDate]) {
+        endDate = @"";
+    }
     [param setValue:endDate forKey:@"ETime"];   //    结束时间 注：如果查询单独一天，此项为""
     
     [NetWorkManager POST:@"SellerService.asmx/GetOrderAmountList" withParameters:param success:success failure:failure];
+}
+
++ (void)GetMessageListWithSuccessWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+    NSDictionary* param = @{
+                            @"ToUserID": [NetWorkManager GetUserId]
+                            };
+    [NetWorkManager POST:@"SellerService.asmx/MessageList" withParameters:param success:success failure:failure];
+}
+
++ (void)SendMessage:(NSDictionary *)param WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+    [NetWorkManager POST:@"SellerService.asmx/PushBuyersMessage" withParameters:param success:success failure:failure];
+}
+
++ (void)ReadMessage:(NSDictionary *)param WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+    [NetWorkManager POST:@"SellerService.asmx/UpdateRead" withParameters:param success:success failure:failure];
 }
 
 @end

@@ -52,12 +52,12 @@
 
 - (IBAction)OnClickBtn3:(id)sender
 {
-    
+    [AppDelegate jumpToWeb1];
 }
 
 - (IBAction)OnClickBtn4:(id)sender
 {
-    
+    [AppDelegate jumpToWeb2];
 }
 
 - (void)didReceiveMemoryWarning

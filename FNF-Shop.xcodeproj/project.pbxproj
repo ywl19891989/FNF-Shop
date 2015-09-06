@@ -131,6 +131,14 @@
 		5C344E101AAF49970030EAB1 /* home_btn6_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C344E021AAF49970030EAB1 /* home_btn6_2.png */; };
 		5C344E111AAF49970030EAB1 /* home_btn7_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C344E031AAF49970030EAB1 /* home_btn7_1.png */; };
 		5C344E121AAF49970030EAB1 /* home_btn7_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C344E041AAF49970030EAB1 /* home_btn7_2.png */; };
+		5C3518DE1B9C82A600637444 /* WebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3518DC1B9C82A600637444 /* WebView.m */; };
+		5C3518DF1B9C82A600637444 /* WebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3518DD1B9C82A600637444 /* WebView.xib */; };
+		5C3518E31B9C831100637444 /* WebView2.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3518E11B9C831100637444 /* WebView2.m */; };
+		5C3518E41B9C831100637444 /* WebView2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3518E21B9C831100637444 /* WebView2.xib */; };
+		5C3518E81B9C977C00637444 /* MessageList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3518E61B9C977C00637444 /* MessageList.m */; };
+		5C3518E91B9C977C00637444 /* MessageList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3518E71B9C977C00637444 /* MessageList.xib */; };
+		5C3518ED1B9C9AAE00637444 /* MessageListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3518EB1B9C9AAE00637444 /* MessageListCell.m */; };
+		5C3518EE1B9C9AAE00637444 /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3518EC1B9C9AAE00637444 /* MessageListCell.xib */; };
 		5C4CA00B1B80CA61001D0EF2 /* icon_pos.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4CA00A1B80CA61001D0EF2 /* icon_pos.png */; };
 		5C4CA00D1B80CA66001D0EF2 /* icon_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4CA00C1B80CA66001D0EF2 /* icon_call.png */; };
 		5C9B5F5C1AA4B831003A7DCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9B5F5B1AA4B831003A7DCF /* Foundation.framework */; };
@@ -443,6 +451,18 @@
 		5C344E021AAF49970030EAB1 /* home_btn6_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn6_2.png; sourceTree = "<group>"; };
 		5C344E031AAF49970030EAB1 /* home_btn7_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn7_1.png; sourceTree = "<group>"; };
 		5C344E041AAF49970030EAB1 /* home_btn7_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_btn7_2.png; sourceTree = "<group>"; };
+		5C3518DB1B9C82A600637444 /* WebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebView.h; sourceTree = "<group>"; };
+		5C3518DC1B9C82A600637444 /* WebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView.m; sourceTree = "<group>"; };
+		5C3518DD1B9C82A600637444 /* WebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebView.xib; sourceTree = "<group>"; };
+		5C3518E01B9C831100637444 /* WebView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebView2.h; sourceTree = "<group>"; };
+		5C3518E11B9C831100637444 /* WebView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebView2.m; sourceTree = "<group>"; };
+		5C3518E21B9C831100637444 /* WebView2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebView2.xib; sourceTree = "<group>"; };
+		5C3518E51B9C977C00637444 /* MessageList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageList.h; sourceTree = "<group>"; };
+		5C3518E61B9C977C00637444 /* MessageList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageList.m; sourceTree = "<group>"; };
+		5C3518E71B9C977C00637444 /* MessageList.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageList.xib; sourceTree = "<group>"; };
+		5C3518EA1B9C9AAE00637444 /* MessageListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageListCell.h; sourceTree = "<group>"; };
+		5C3518EB1B9C9AAE00637444 /* MessageListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageListCell.m; sourceTree = "<group>"; };
+		5C3518EC1B9C9AAE00637444 /* MessageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageListCell.xib; sourceTree = "<group>"; };
 		5C4CA00A1B80CA61001D0EF2 /* icon_pos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_pos.png; sourceTree = "<group>"; };
 		5C4CA00C1B80CA66001D0EF2 /* icon_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_call.png; sourceTree = "<group>"; };
 		5C9B5F581AA4B831003A7DCF /* FNF-Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FNF-Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -886,6 +906,15 @@
 				5C1A9D151B94A8FF00198707 /* TransactionView.h */,
 				5C1A9D161B94A8FF00198707 /* TransactionView.m */,
 				5C1A9D171B94A8FF00198707 /* TransactionView.xib */,
+				5C3518DB1B9C82A600637444 /* WebView.h */,
+				5C3518DC1B9C82A600637444 /* WebView.m */,
+				5C3518DD1B9C82A600637444 /* WebView.xib */,
+				5C3518E01B9C831100637444 /* WebView2.h */,
+				5C3518E11B9C831100637444 /* WebView2.m */,
+				5C3518E21B9C831100637444 /* WebView2.xib */,
+				5C3518E51B9C977C00637444 /* MessageList.h */,
+				5C3518E61B9C977C00637444 /* MessageList.m */,
+				5C3518E71B9C977C00637444 /* MessageList.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -899,6 +928,9 @@
 				5C1677D31B94BACA00293F04 /* TransacationCell.h */,
 				5C1677D41B94BACA00293F04 /* TransacationCell.m */,
 				5C1677D51B94BACA00293F04 /* TransacationCell.xib */,
+				5C3518EA1B9C9AAE00637444 /* MessageListCell.h */,
+				5C3518EB1B9C9AAE00637444 /* MessageListCell.m */,
+				5C3518EC1B9C9AAE00637444 /* MessageListCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1108,6 +1140,7 @@
 				5CE9EA211AB33ABA004D0D79 /* my_msg_icon.png in Resources */,
 				5CE9EA101AB33852004D0D79 /* left_mid_select.png in Resources */,
 				5C1677D21B94B77000293F04 /* right_arrow@2x.png in Resources */,
+				5C3518DF1B9C82A600637444 /* WebView.xib in Resources */,
 				5C344E121AAF49970030EAB1 /* home_btn7_2.png in Resources */,
 				5C0A9C211B935AAB00892DBA /* Turnover1_03.png in Resources */,
 				5CFDC47A1ADEB5D60081B052 /* my_alipay_code.png in Resources */,
@@ -1121,6 +1154,7 @@
 				5C1677D11B94B77000293F04 /* right_arrow.png in Resources */,
 				5C0A9BBF1B9348B700892DBA /* InfoPlist.strings in Resources */,
 				5C0A9C081B9348B800892DBA /* CoverView.xib in Resources */,
+				5C3518EE1B9C9AAE00637444 /* MessageListCell.xib in Resources */,
 				5C0A9C161B9359B600892DBA /* message2_06.png in Resources */,
 				5C0A9C121B9348E600892DBA /* icon-57.png in Resources */,
 				5CAA286A1AA5F8DE0062B9FC /* liubianxing_03.png in Resources */,
@@ -1130,6 +1164,7 @@
 				5C0A9C0E1B9348B800892DBA /* OrderDetail.xib in Resources */,
 				5C0A9C0C1B9348B800892DBA /* MainView.xib in Resources */,
 				5C344E0C1AAF49970030EAB1 /* home_btn4_2.png in Resources */,
+				5C3518E41B9C831100637444 /* WebView2.xib in Resources */,
 				5C0A9BC11B9348B700892DBA /* Images.xcassets in Resources */,
 				5C1A9D1B1B94A9EB00198707 /* pick_date.png in Resources */,
 				5CE9EA0F1AB33852004D0D79 /* big_round_rect.png in Resources */,
@@ -1156,6 +1191,7 @@
 				5CE9EA131AB33852004D0D79 /* mid_seg_unselect.png in Resources */,
 				5C344E0F1AAF49970030EAB1 /* home_btn6_1.png in Resources */,
 				5CFDC47B1ADEB5D60081B052 /* my_weixin_code.png in Resources */,
+				5C3518E91B9C977C00637444 /* MessageList.xib in Resources */,
 				5C0A9BFE1B9348B800892DBA /* UzysAssetsPickerController.xib in Resources */,
 				5C1A9D141B949ECB00198707 /* menue3_order.png in Resources */,
 				5C1A9D091B949EC000198707 /* bottom_home1.png in Resources */,
@@ -1201,6 +1237,7 @@
 				5C0A9C1E1B935A1200892DBA /* UserView.m in Sources */,
 				5C0A9BEA1B9348B800892DBA /* MBProgressHUD.m in Sources */,
 				5C0A9BDE1B9348B700892DBA /* JGProgressHUDAnimation.m in Sources */,
+				5C3518E31B9C831100637444 /* WebView2.m in Sources */,
 				5C0A9BD61B9348B700892DBA /* openssl_wrapper.m in Sources */,
 				5C0A9BDC1B9348B700892DBA /* DXPopover.m in Sources */,
 				5C0A9BEF1B9348B800892DBA /* ChineseToPinyinResource.m in Sources */,
@@ -1214,10 +1251,12 @@
 				5C0A9BC81B9348B700892DBA /* AFURLConnectionOperation.m in Sources */,
 				5C0A9BE11B9348B700892DBA /* JGProgressHUDIndeterminateIndicatorView.m in Sources */,
 				5C0A9BDF1B9348B700892DBA /* JGProgressHUDFadeAnimation.m in Sources */,
+				5C3518DE1B9C82A600637444 /* WebView.m in Sources */,
 				5C0A9BD91B9348B700892DBA /* Base64.m in Sources */,
 				5C0A9BC71B9348B700892DBA /* AFSecurityPolicy.m in Sources */,
 				5C0A9BD51B9348B700892DBA /* NSDataEx.m in Sources */,
 				5C0A9BC51B9348B700892DBA /* AFJSONUtilities.m in Sources */,
+				5C3518E81B9C977C00637444 /* MessageList.m in Sources */,
 				5C0A9BF81B9348B800892DBA /* SSKeychain.m in Sources */,
 				5C0A9BEB1B9348B800892DBA /* NetWorkManager.m in Sources */,
 				5C0A9C031B9348B800892DBA /* UzysWrapperPickerController.m in Sources */,
@@ -1228,6 +1267,7 @@
 				5C0A9BF31B9348B800892DBA /* PinyinFormatter.m in Sources */,
 				5C0A9BE01B9348B700892DBA /* JGProgressHUDFadeZoomAnimation.m in Sources */,
 				5C0A9BFA1B9348B800892DBA /* UITableView+DataSourceBlocks.m in Sources */,
+				5C3518ED1B9C9AAE00637444 /* MessageListCell.m in Sources */,
 				5C0A9BF71B9348B800892DBA /* SecurityData.m in Sources */,
 				5C0A9BED1B9348B800892DBA /* UIImage+ColorAtPixel.m in Sources */,
 				5C0A9BE41B9348B700892DBA /* JGProgressHUDRingIndicatorView.m in Sources */,

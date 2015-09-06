@@ -28,6 +28,8 @@
 
             CGRect rect = self.view.bounds;
             rect.origin.y = [self getTopOffsetY];
+            rect.size.height = rect.size.height + [self getTopOffsetY];
+            [self.view setFrame:rect];
             [self.view setBounds:rect];
     }
     return self;
