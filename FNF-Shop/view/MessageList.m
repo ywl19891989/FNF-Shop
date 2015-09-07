@@ -53,8 +53,21 @@
             return cell;
         } setDidSelectRowBlock:^(UITableView *tableView, NSIndexPath *indexPath) {
             NSLog(@"OnClick cell %d", (int)indexPath.row);
+            
+            NSDictionary* info = [msgList objectAtIndex:(NSUInteger)indexPath.row];
+            
+            [NetWorkManager GetMessageDetail:info[@"OrderCode"] WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
+                
+                NSDictionary* detailInfo = data;
+                [NetWorkManager SetCurMsgInfo:detailInfo];
+                [AppDelegate jumpToMsgDetail];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+            }];
+            
         }];
         
+        [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
     }];

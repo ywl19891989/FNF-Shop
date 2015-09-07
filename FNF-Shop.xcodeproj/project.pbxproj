@@ -141,6 +141,8 @@
 		5C3518EE1B9C9AAE00637444 /* MessageListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C3518EC1B9C9AAE00637444 /* MessageListCell.xib */; };
 		5C4CA00B1B80CA61001D0EF2 /* icon_pos.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4CA00A1B80CA61001D0EF2 /* icon_pos.png */; };
 		5C4CA00D1B80CA66001D0EF2 /* icon_call.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C4CA00C1B80CA66001D0EF2 /* icon_call.png */; };
+		5C4FDA231B9D123000327710 /* MessageDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C4FDA211B9D123000327710 /* MessageDetail.m */; };
+		5C4FDA241B9D123000327710 /* MessageDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5C4FDA221B9D123000327710 /* MessageDetail.xib */; };
 		5C9B5F5C1AA4B831003A7DCF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9B5F5B1AA4B831003A7DCF /* Foundation.framework */; };
 		5C9B5F5E1AA4B831003A7DCF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9B5F5D1AA4B831003A7DCF /* CoreGraphics.framework */; };
 		5C9B5F601AA4B831003A7DCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9B5F5F1AA4B831003A7DCF /* UIKit.framework */; };
@@ -465,6 +467,9 @@
 		5C3518EC1B9C9AAE00637444 /* MessageListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageListCell.xib; sourceTree = "<group>"; };
 		5C4CA00A1B80CA61001D0EF2 /* icon_pos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_pos.png; sourceTree = "<group>"; };
 		5C4CA00C1B80CA66001D0EF2 /* icon_call.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_call.png; sourceTree = "<group>"; };
+		5C4FDA201B9D123000327710 /* MessageDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetail.h; sourceTree = "<group>"; };
+		5C4FDA211B9D123000327710 /* MessageDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetail.m; sourceTree = "<group>"; };
+		5C4FDA221B9D123000327710 /* MessageDetail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageDetail.xib; sourceTree = "<group>"; };
 		5C9B5F581AA4B831003A7DCF /* FNF-Shop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FNF-Shop.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9B5F5B1AA4B831003A7DCF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		5C9B5F5D1AA4B831003A7DCF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -915,6 +920,9 @@
 				5C3518E51B9C977C00637444 /* MessageList.h */,
 				5C3518E61B9C977C00637444 /* MessageList.m */,
 				5C3518E71B9C977C00637444 /* MessageList.xib */,
+				5C4FDA201B9D123000327710 /* MessageDetail.h */,
+				5C4FDA211B9D123000327710 /* MessageDetail.m */,
+				5C4FDA221B9D123000327710 /* MessageDetail.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1157,6 +1165,7 @@
 				5C3518EE1B9C9AAE00637444 /* MessageListCell.xib in Resources */,
 				5C0A9C161B9359B600892DBA /* message2_06.png in Resources */,
 				5C0A9C121B9348E600892DBA /* icon-57.png in Resources */,
+				5C4FDA241B9D123000327710 /* MessageDetail.xib in Resources */,
 				5CAA286A1AA5F8DE0062B9FC /* liubianxing_03.png in Resources */,
 				5C0A9C061B9348B800892DBA /* OrderListCell.xib in Resources */,
 				5CFBFCFA1AB1E377001D658D /* guanggao.png in Resources */,
@@ -1269,6 +1278,7 @@
 				5C0A9BFA1B9348B800892DBA /* UITableView+DataSourceBlocks.m in Sources */,
 				5C3518ED1B9C9AAE00637444 /* MessageListCell.m in Sources */,
 				5C0A9BF71B9348B800892DBA /* SecurityData.m in Sources */,
+				5C4FDA231B9D123000327710 /* MessageDetail.m in Sources */,
 				5C0A9BED1B9348B800892DBA /* UIImage+ColorAtPixel.m in Sources */,
 				5C0A9BE41B9348B700892DBA /* JGProgressHUDRingIndicatorView.m in Sources */,
 				5C0A9BCA1B9348B700892DBA /* AFURLResponseSerialization.m in Sources */,

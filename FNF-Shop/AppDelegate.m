@@ -20,6 +20,7 @@
 #import "WebView.h"
 #import "WebView2.h"
 #import "MessageList.h"
+#import "MessageDetail.h"
 
 @implementation AppDelegate
 
@@ -37,6 +38,7 @@ static UIWindow* mainWindow;
 + (void)jumpToWeb1 {  CREATE_VIEW(WebView); }
 + (void)jumpToWeb2 {  CREATE_VIEW(WebView2); }
 + (void)jumpToMsgList { CREATE_VIEW(MessageList); }
++ (void)jumpToMsgDetail { CREATE_VIEW(MessageDetail); }
 
 + (void)ShowTips:(NSString*)tipText
 {
@@ -100,6 +102,25 @@ static MBProgressHUD *loadingAlertView = nil;
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kAPNetworkDidReceiveMessageNotification object:nil];
+    
+//    13fb5442-a031-40ee-8310-0c26c1819d78
+    
+//    NSDictionary* param = @{
+//                            @"OrderID": @"170",
+//                            @"SendUserID": @"1",
+//                            @"SendUserType": @"Customers",
+//                            @"ToUserID": @"13fb5442-a031-40ee-8310-0c26c1819d78",
+//                            @"ToUserType": @"Merchant",
+//                            @"Contents": @"测试数据呀",
+//                            @"PushID": @"060f1ebd023",
+//                            @"DeviceNo": @"ffffffff-e866-f971-ffff-ffffc4dc73a4"
+//                            };
+//    
+//    [NetWorkManager POST:@"SellerService.asmx/PushBuyersMessage" withParameters:param success:^(AFHTTPRequestOperation *operation, id data) {
+//        
+//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+//        
+//    }];
 
     return YES;
 }

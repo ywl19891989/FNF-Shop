@@ -85,6 +85,7 @@ NM_PROPERTY_DEFINE(NSArray*, NewOrderList);
 NM_PROPERTY_DEFINE(NSArray*, ConfirmedOrderList);
 NM_PROPERTY_DEFINE(NSArray*, FinishedOrderList);
 NM_PROPERTY_DEFINE(NSDictionary*, CurOrderInfo);
+NM_PROPERTY_DEFINE(NSDictionary*, CurMsgInfo);
 
 //----------------------------------------------
 
@@ -323,6 +324,15 @@ static SecKeyRef _public_key=nil;
                             @"ToUserID": [NetWorkManager GetUserId]
                             };
     [NetWorkManager POST:@"SellerService.asmx/MessageList" withParameters:param success:success failure:failure];
+}
+
++ (void)GetMessageDetail:(NSString *)orderCode WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+    
+    NSDictionary* param = @{
+                            @"OrderCode": orderCode
+                            };
+    [NetWorkManager POST:@"SellerService.asmx/MessageDetailByOrderCode" withParameters:param success:success failure:failure];
 }
 
 + (void)SendMessage:(NSDictionary *)param WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
