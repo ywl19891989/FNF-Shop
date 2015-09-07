@@ -182,6 +182,7 @@
 		5CFE0A6D1AB0967F005F0BBC /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE0A6A1AB0967F005F0BBC /* home_icon.png */; };
 		5CFE0A6E1AB0967F005F0BBC /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE0A6B1AB0967F005F0BBC /* user_icon.png */; };
 		5CFF19A91AC4648F005E65E7 /* orderDetailBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFF19A81AC4648F005E65E7 /* orderDetailBg.png */; };
+		62C574E71B9DC8F9007D1BE2 /* YcKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C574E61B9DC8F9007D1BE2 /* YcKeyBoardView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -511,6 +512,8 @@
 		5CFE0A6A1AB0967F005F0BBC /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		5CFE0A6B1AB0967F005F0BBC /* user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon.png; sourceTree = "<group>"; };
 		5CFF19A81AC4648F005E65E7 /* orderDetailBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orderDetailBg.png; sourceTree = "<group>"; };
+		62C574E51B9DC8F9007D1BE2 /* YcKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YcKeyBoardView.h; sourceTree = "<group>"; };
+		62C574E61B9DC8F9007D1BE2 /* YcKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YcKeyBoardView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -557,6 +560,7 @@
 		5C0A9AD41B9348B700892DBA /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				62C574E41B9DC8F9007D1BE2 /* YcKeyBoardView */,
 				5C1677C61B94B77000293F04 /* CKCalendar */,
 				5C0A9AD51B9348B700892DBA /* AFNetworking */,
 				5C0A9AEB1B9348B700892DBA /* alipay */,
@@ -1070,6 +1074,15 @@
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
 		};
+		62C574E41B9DC8F9007D1BE2 /* YcKeyBoardView */ = {
+			isa = PBXGroup;
+			children = (
+				62C574E51B9DC8F9007D1BE2 /* YcKeyBoardView.h */,
+				62C574E61B9DC8F9007D1BE2 /* YcKeyBoardView.m */,
+			);
+			path = YcKeyBoardView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1265,6 +1278,7 @@
 				5C0A9BC71B9348B700892DBA /* AFSecurityPolicy.m in Sources */,
 				5C0A9BD51B9348B700892DBA /* NSDataEx.m in Sources */,
 				5C0A9BC51B9348B700892DBA /* AFJSONUtilities.m in Sources */,
+				62C574E71B9DC8F9007D1BE2 /* YcKeyBoardView.m in Sources */,
 				5C3518E81B9C977C00637444 /* MessageList.m in Sources */,
 				5C0A9BF81B9348B800892DBA /* SSKeychain.m in Sources */,
 				5C0A9BEB1B9348B800892DBA /* NetWorkManager.m in Sources */,
