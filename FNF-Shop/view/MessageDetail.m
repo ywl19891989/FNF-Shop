@@ -109,8 +109,14 @@
     
     [NetWorkManager SendMessage:param WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
         if (data) {
-            NSArray* msgList = detailInfo[@"mesList"];
-            
+            [NetWorkManager GetMessageDetail:detailInfo[@"OrderCode"] WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
+                
+                NSDictionary* detailInfo = data;
+                [NetWorkManager SetCurMsgInfo:detailInfo];
+                [AppDelegate jumpToMsgDetail];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                
+            }];
         }
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
