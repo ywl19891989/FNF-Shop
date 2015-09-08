@@ -35,16 +35,27 @@
             _menuBtn[i].tag = i;
             _menuBtn[i].backgroundColor = bgColor;
             UIImage* normal = [UIImage imageNamed:[normalBtnImg objectAtIndex:i]];
+            UIImage* selected = [UIImage imageNamed:[selectBtnImg objectAtIndex:i]];
             CGSize size = [normal size];
             
             [_menuBtn[i] addTarget:self action:@selector(clickMenuBtn:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:_menuBtn[i]];
             _menuBtn[i].frame = CGRectMake(i * btnW + 0.5 * (btnW - btnW * scale), 0, btnW * scale, originHeight * scale);
             
-            UIImageView* icon = [[UIImageView alloc] initWithImage:normal];
-            [self addSubview:icon];
-            icon.frame = CGRectMake((i + 0.5) * btnW + 0.5 * (btnW - btnW * scale) - 0.5 * size.width * originHeight * scale / size.height, 0, size.width * originHeight * scale / size.height, originHeight * scale);
+            _menuBtnIcon1[i] = [[UIImageView alloc] initWithImage:normal];
+            _menuBtnIcon2[i] = [[UIImageView alloc] initWithImage:selected];
+            
+            [self addSubview:_menuBtnIcon1[i]];
+            [self addSubview:_menuBtnIcon2[i]];
+            
+            float iconScale = 0.75;
+            
+            _menuBtnIcon1[i].frame = CGRectMake((i + 0.5) * btnW + 0.5 * (btnW - btnW * scale) - 0.5 * size.width * originHeight * scale / size.height, 0.5 * (originHeight - originHeight * iconScale), size.width * originHeight * scale * iconScale / size.height, originHeight * iconScale);
+            _menuBtnIcon2[i].frame = CGRectMake((i + 0.5) * btnW + 0.5 * (btnW - btnW * scale) - 0.5 * size.width * originHeight * scale / size.height, 0.5 * (originHeight - originHeight * iconScale), size.width * originHeight * scale * iconScale / size.height, originHeight * iconScale);
         }
+        UIView* line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+        line.backgroundColor = [UIColor lightGrayColor];
+        [self addSubview:line];
     }
     return self;
 }
@@ -68,7 +79,9 @@
 {
     for (int i = 0; i < BTN_COUNT; i++) {
         _menuBtn[i].selected = (i == tag);
-        _menuBtn[i].backgroundColor = (tag == i ? SELECT_COLOR : UNSELECT_COLOR);
+        _menuBtn[i].backgroundColor = [UIColor whiteColor];
+        [_menuBtnIcon1[i] setHidden:tag == i];
+        [_menuBtnIcon2[i] setHidden:tag != i];
     }
 }
 
