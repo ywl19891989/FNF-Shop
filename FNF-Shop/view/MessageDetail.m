@@ -56,7 +56,7 @@
         [cell.detailLabel setText:info[@"Content"]];
         [cell.dateLabel setText:info[@"CreateDate"]];
         
-        NSString* toUserId = info[@"ToUserID"];
+        NSString* toUserId = info[@"SendUserID"];
         if ([toUserId isEqualToString:[NetWorkManager GetUserId]]) {
             [cell.detailLabel setTextAlignment:NSTextAlignmentRight];
             [cell.dateLabel setTextAlignment:NSTextAlignmentRight];
