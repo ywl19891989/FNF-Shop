@@ -269,6 +269,8 @@ static SecKeyRef _public_key=nil;
     NSDictionary* param = @{
                             @"Account": data[@"UserEmail"],
                             @"UserKey": data[@"UserPwd"],
+                            @"LastLoginControlID": [SecurityData deviceId],
+                            @"JpushID": @"f676f8cd0284fd6ca09e51e6",
                             };
     [NetWorkManager POST:@"SellerService.asmx/SellerLogin" withParameters:param success:success failure:failure];
 }
@@ -318,7 +320,7 @@ static SecKeyRef _public_key=nil;
     [NetWorkManager POST:@"SellerService.asmx/GetOrderAmountList" withParameters:param success:success failure:failure];
 }
 
-+ (void)GetMessageListWithSuccessWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
++ (void)GetMessageListWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
 {
     NSDictionary* param = @{
                             @"ToUserID": [NetWorkManager GetUserId]

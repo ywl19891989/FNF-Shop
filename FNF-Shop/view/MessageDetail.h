@@ -8,6 +8,6 @@
 
 #import "RootViewController.h"
 
-@interface MessageDetail : RootViewController
+@interface MessageDetail : UIViewController
 
 @end

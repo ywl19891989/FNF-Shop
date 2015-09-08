@@ -183,6 +183,9 @@
 		5CFE0A6E1AB0967F005F0BBC /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE0A6B1AB0967F005F0BBC /* user_icon.png */; };
 		5CFF19A91AC4648F005E65E7 /* orderDetailBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFF19A81AC4648F005E65E7 /* orderDetailBg.png */; };
 		62C574E71B9DC8F9007D1BE2 /* YcKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C574E61B9DC8F9007D1BE2 /* YcKeyBoardView.m */; };
+		62C574FE1B9EB5AA007D1BE2 /* MessageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C574FC1B9EB5AA007D1BE2 /* MessageDetailCell.m */; };
+		62C574FF1B9EB5AA007D1BE2 /* MessageDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C574FD1B9EB5AA007D1BE2 /* MessageDetailCell.xib */; };
+		62C575031B9EBD9F007D1BE2 /* YFInputBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C575021B9EBD9F007D1BE2 /* YFInputBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -514,6 +517,11 @@
 		5CFF19A81AC4648F005E65E7 /* orderDetailBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orderDetailBg.png; sourceTree = "<group>"; };
 		62C574E51B9DC8F9007D1BE2 /* YcKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YcKeyBoardView.h; sourceTree = "<group>"; };
 		62C574E61B9DC8F9007D1BE2 /* YcKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YcKeyBoardView.m; sourceTree = "<group>"; };
+		62C574FB1B9EB5AA007D1BE2 /* MessageDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailCell.h; sourceTree = "<group>"; };
+		62C574FC1B9EB5AA007D1BE2 /* MessageDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailCell.m; sourceTree = "<group>"; };
+		62C574FD1B9EB5AA007D1BE2 /* MessageDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageDetailCell.xib; sourceTree = "<group>"; };
+		62C575011B9EBD9F007D1BE2 /* YFInputBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFInputBar.h; sourceTree = "<group>"; };
+		62C575021B9EBD9F007D1BE2 /* YFInputBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFInputBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -560,6 +568,7 @@
 		5C0A9AD41B9348B700892DBA /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				62C575001B9EBD9F007D1BE2 /* YFInputBar */,
 				62C574E41B9DC8F9007D1BE2 /* YcKeyBoardView */,
 				5C1677C61B94B77000293F04 /* CKCalendar */,
 				5C0A9AD51B9348B700892DBA /* AFNetworking */,
@@ -943,6 +952,9 @@
 				5C3518EA1B9C9AAE00637444 /* MessageListCell.h */,
 				5C3518EB1B9C9AAE00637444 /* MessageListCell.m */,
 				5C3518EC1B9C9AAE00637444 /* MessageListCell.xib */,
+				62C574FB1B9EB5AA007D1BE2 /* MessageDetailCell.h */,
+				62C574FC1B9EB5AA007D1BE2 /* MessageDetailCell.m */,
+				62C574FD1B9EB5AA007D1BE2 /* MessageDetailCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -1083,6 +1095,15 @@
 			path = YcKeyBoardView;
 			sourceTree = "<group>";
 		};
+		62C575001B9EBD9F007D1BE2 /* YFInputBar */ = {
+			isa = PBXGroup;
+			children = (
+				62C575011B9EBD9F007D1BE2 /* YFInputBar.h */,
+				62C575021B9EBD9F007D1BE2 /* YFInputBar.m */,
+			);
+			path = YFInputBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1210,6 +1231,7 @@
 				5CFBFCF81AB1E2F4001D658D /* LOGO.png in Resources */,
 				5CFF19A91AC4648F005E65E7 /* orderDetailBg.png in Resources */,
 				5C1677D01B94B77000293F04 /* left_arrow@2x.png in Resources */,
+				62C574FF1B9EB5AA007D1BE2 /* MessageDetailCell.xib in Resources */,
 				5CE9EA131AB33852004D0D79 /* mid_seg_unselect.png in Resources */,
 				5C344E0F1AAF49970030EAB1 /* home_btn6_1.png in Resources */,
 				5CFDC47B1ADEB5D60081B052 /* my_weixin_code.png in Resources */,
@@ -1255,6 +1277,7 @@
 				5C0A9C021B9348B800892DBA /* UzysGroupViewCell.m in Sources */,
 				5C0A9BD31B9348B700892DBA /* DataVerifier.m in Sources */,
 				5C0A9BDB1B9348B700892DBA /* RootViewController.m in Sources */,
+				62C575031B9EBD9F007D1BE2 /* YFInputBar.m in Sources */,
 				5C0A9BC91B9348B700892DBA /* AFURLRequestSerialization.m in Sources */,
 				5C0A9C1E1B935A1200892DBA /* UserView.m in Sources */,
 				5C0A9BEA1B9348B800892DBA /* MBProgressHUD.m in Sources */,
@@ -1275,6 +1298,7 @@
 				5C0A9BDF1B9348B700892DBA /* JGProgressHUDFadeAnimation.m in Sources */,
 				5C3518DE1B9C82A600637444 /* WebView.m in Sources */,
 				5C0A9BD91B9348B700892DBA /* Base64.m in Sources */,
+				62C574FE1B9EB5AA007D1BE2 /* MessageDetailCell.m in Sources */,
 				5C0A9BC71B9348B700892DBA /* AFSecurityPolicy.m in Sources */,
 				5C0A9BD51B9348B700892DBA /* NSDataEx.m in Sources */,
 				5C0A9BC51B9348B700892DBA /* AFJSONUtilities.m in Sources */,

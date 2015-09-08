@@ -33,7 +33,7 @@
     
     self.tableView.separatorColor = [UIColor clearColor];
     
-    [NetWorkManager GetMessageListWithSuccessWithSuccess:^(AFHTTPRequestOperation *operation, id data) {
+    [NetWorkManager GetMessageListWithSuccess:^(AFHTTPRequestOperation *operation, id data) {
         NSArray* msgList = data;
         
         [self.tableView initTableViewDataSourceAndDelegate:^NSInteger(UITableView *tableView, NSInteger section) {

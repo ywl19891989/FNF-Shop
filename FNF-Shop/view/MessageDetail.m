@@ -7,22 +7,17 @@
 //
 
 #import "MessageDetail.h"
-#import "YcKeyBoardView.h"
+#import "MessageDetailCell.h"
+#import "YFInputBar.h"
+#import "NetWorkManager.h"
 
-#define kWinSize [UIScreen mainScreen].bounds.size
-#define TOOLBARTAG		200
-#define TABLEVIEWTAG	300
-
-@interface MessageDetail () <YcKeyBoardViewDelegate>
+@interface MessageDetail () <YFInputBarDelegate>
 {
     CGRect viewOrigin;
 }
 
-@property (nonatomic,strong)YcKeyBoardView *key;
-@property (weak, nonatomic) IBOutlet UITextField *inputLabel;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet TableViewWithBlock *tableView;
-@property (weak, nonatomic) IBOutlet UITextField *inputTextVIew;
 @end
 
 @implementation MessageDetail
@@ -35,8 +30,6 @@
     }
     return self;
 }
-- (IBAction)OnClickSend:(id)sender {
-}
 
 - (void)viewDidLoad
 {
@@ -47,57 +40,95 @@
     viewOrigin = self.view.frame;
     
     NSDictionary* detailInfo = [NetWorkManager GetCurMsgInfo];
+    NSArray* msgList = detailInfo[@"mesList"];
+    
+    [self.tableView initTableViewDataSourceAndDelegate:^NSInteger(UITableView *tableView, NSInteger section) {
+        return (NSInteger)[msgList count];
+    } setCellForIndexPathBlock:^UITableViewCell *(UITableView *tableView, NSIndexPath *indexPath) {
+        MessageDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MessageDetailCell"];
+        if (!cell) {
+            cell = [[[NSBundle mainBundle] loadNibNamed:@"MessageDetailCell" owner:self options:nil] objectAtIndex:0];
+            [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+        }
+        
+        NSDictionary* info = [msgList objectAtIndex:(NSUInteger)indexPath.row];
+        
+        [cell.detailLabel setText:info[@"Content"]];
+        [cell.dateLabel setText:info[@"CreateDate"]];
+        
+        NSString* toUserId = info[@"ToUserID"];
+        if ([toUserId isEqualToString:[NetWorkManager GetUserId]]) {
+            [cell.detailLabel setTextAlignment:NSTextAlignmentRight];
+            [cell.dateLabel setTextAlignment:NSTextAlignmentRight];
+        } else {
+            [cell.detailLabel setTextAlignment:NSTextAlignmentLeft];
+            [cell.dateLabel setTextAlignment:NSTextAlignmentLeft];
+        }
+        
+        return cell;
+    } setDidSelectRowBlock:^(UITableView *tableView, NSIndexPath *indexPath) {
+        
+    }];
+    
+    self.tableView.separatorColor = [UIColor clearColor];
+    [self.tableView reloadData];
     
     [self.titleLabel setText:detailInfo[@"MerchantName"]];
+    
+    CGRect frame = self.view.frame;
+    
+    YFInputBar *inputBar = [[YFInputBar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(frame) - 44, 320, 44)];
+    [inputBar.sendBtn setTitle:@"Send" forState:UIControlStateNormal];
+    [inputBar.sendBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+    inputBar.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
+    
+    inputBar.delegate = self;
+    inputBar.clearInputWhenSend = YES;
+    inputBar.resignFirstResponderWhenSend = YES;
+    
+    [self.view addSubview:inputBar];
+}
+
+-(void)inputBar:(YFInputBar *)inputBar sendBtnPress:(UIButton *)sendBtn withInputString:(NSString *)str
+{
+    
+    NSLog(@"%@", str);
+
+    NSDictionary* detailInfo = [NetWorkManager GetCurMsgInfo];
+
+    NSDictionary* param = @{
+                            @"OrderCode": detailInfo[@"OrderCode"],
+                            @"SendUserID": [NetWorkManager GetUserId],
+                            @"SendUserType": @"Merchant",
+                            @"ToUserID": detailInfo[@"UserID"],
+                            @"ToUserType": @"Customers",
+                            @"Contents": str,
+                            @"PushID": @"060f1ebd023",
+                            @"DeviceNo": @"ffffffff-e866-f971-ffff-ffffc4dc73a4"
+                            };
+    
+    [NetWorkManager SendMessage:param WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
+        if (data) {
+            NSArray* msgList = detailInfo[@"mesList"];
+            
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        
+    }];
+}
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    [self.view.subviews enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        [((UIView*)obj) resignFirstResponder];
+    }];
 }
 
 - (IBAction)OnClickBack:(id)sender
 {
     [AppDelegate jumpToMsgList];
 }
-- (IBAction)OnClickInput:(id)sender {
-}
-
--(void)addBtn:(UIButton *)btn
-{
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardHide:) name:UIKeyboardWillHideNotification object:nil];
-    if(self.key==nil){
-        self.key = [[YcKeyBoardView alloc] initWithFrame:CGRectMake(0, kWinSize.height-44, kWinSize.width, 44)];
-    }
-    self.key.delegate = self;
-    [self.key.textView becomeFirstResponder];
-    self.key.textView.returnKeyType=UIReturnKeySend;
-    [self.view addSubview:self.key];
-}
--(void)keyboardShow:(NSNotification *)note
-{
-    CGRect keyBoardRect=[note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    CGFloat deltaY=keyBoardRect.size.height;
-    [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
-        
-        self.key.transform=CGAffineTransformMakeTranslation(0, -deltaY);
-    }];
-}
--(void)keyboardHide:(NSNotification *)note
-{
-    [UIView animateWithDuration:[note.userInfo[UIKeyboardAnimationDurationUserInfoKey] floatValue] animations:^{
-        
-        self.key.transform=CGAffineTransformIdentity;
-    } completion:^(BOOL finished) {
-        
-        self.key.textView.text=@"";
-        [self.key removeFromSuperview];
-    }];
-    
-}
--(void)keyBoardViewHide:(YcKeyBoardView *)keyBoardView textView:(UITextView *)contentView
-{
-    [contentView resignFirstResponder];
-    //接口请求
-    [self.inputText setText:[contentView text]];
-}
-
 
 - (void)didReceiveMemoryWarning
 {
