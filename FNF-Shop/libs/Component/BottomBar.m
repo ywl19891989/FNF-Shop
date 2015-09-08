@@ -50,8 +50,8 @@
             
             float iconScale = 0.75;
             
-            _menuBtnIcon1[i].frame = CGRectMake((i + 0.5) * btnW + 0.5 * (btnW - btnW * scale) - 0.5 * size.width * originHeight * scale / size.height, 0.5 * (originHeight - originHeight * iconScale), size.width * originHeight * scale * iconScale / size.height, originHeight * iconScale);
-            _menuBtnIcon2[i].frame = CGRectMake((i + 0.5) * btnW + 0.5 * (btnW - btnW * scale) - 0.5 * size.width * originHeight * scale / size.height, 0.5 * (originHeight - originHeight * iconScale), size.width * originHeight * scale * iconScale / size.height, originHeight * iconScale);
+            _menuBtnIcon1[i].frame = CGRectMake((i + 0.5) * btnW + 0.5 * (btnW - btnW * scale) - 0.5 * size.width * originHeight * scale * iconScale / size.height, 0.5 * (originHeight - originHeight * iconScale), size.width * originHeight * scale * iconScale / size.height, originHeight * iconScale);
+            _menuBtnIcon2[i].frame = CGRectMake((i + 0.5) * btnW + 0.5 * (btnW - btnW * scale) - 0.5 * size.width * originHeight * scale * iconScale / size.height, 0.5 * (originHeight - originHeight * iconScale), size.width * originHeight * scale * iconScale / size.height, originHeight * iconScale);
         }
         UIView* line = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
         line.backgroundColor = [UIColor lightGrayColor];
