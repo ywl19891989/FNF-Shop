@@ -29,11 +29,13 @@
     }
     return self;
 }
+
 -(void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
     _originalFrame = frame;
 }
+
 //_originalFrame的set方法  因为会调用setFrame  所以就不在此做赋值；
 -(void)setOriginalFrame:(CGRect)originalFrame
 {
@@ -56,6 +58,7 @@
     }
     return _textField;
 }
+
 -(UIButton *)sendBtn
 {
     if (!_sendBtn) {
@@ -67,8 +70,8 @@
     }
     return _sendBtn;
 }
-#pragma mark selfDelegate method
 
+#pragma mark selfDelegate method
 -(void)sendBtnPress:(UIButton*)sender
 {
     if (self.delegate&&[self.delegate respondsToSelector:@selector(inputBar:sendBtnPress:withInputString:)]) {
@@ -83,7 +86,6 @@
 }
 
 #pragma mark keyboardNotification
-
 - (void)keyboardWillShow:(NSNotification*)notification{
     CGRect _keyboardRect = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     NSLog(@"%f-%f-%f-%f",_keyboardRect.origin.y,_keyboardRect.size.height,[self getHeighOfWindow]-CGRectGetMaxY(self.frame),CGRectGetMinY(self.frame));

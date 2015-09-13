@@ -21,6 +21,7 @@
 #import "WebView2.h"
 #import "MessageList.h"
 #import "MessageDetail.h"
+#import "BLEViewController.h"
 
 @implementation AppDelegate
 
@@ -39,6 +40,7 @@ static UIWindow* mainWindow;
 + (void)jumpToWeb2 {  CREATE_VIEW(WebView2); }
 + (void)jumpToMsgList { CREATE_VIEW(MessageList); }
 + (void)jumpToMsgDetail { CREATE_VIEW(MessageDetail); }
++ (void)jumpToDeviceList { CREATE_VIEW(BLEViewController); }
 
 + (void)ShowTips:(NSString*)tipText
 {

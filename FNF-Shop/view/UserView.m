@@ -37,7 +37,16 @@
 
 - (IBAction)OnClickSetting:(id)sender
 {
-    
+    UIAlertView* confirm = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"Are you sure logout?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Confirm", nil];
+    [confirm show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [NetWorkManager SetUserInfo:@{}];
+        [AppDelegate jumpToLogin];
+    }
 }
 
 - (IBAction)OnClickBtn1:(id)sender
@@ -52,12 +61,12 @@
 
 - (IBAction)OnClickBtn3:(id)sender
 {
-    [AppDelegate jumpToWeb1];
+    [AppDelegate jumpToWeb2];
 }
 
 - (IBAction)OnClickBtn4:(id)sender
 {
-    [AppDelegate jumpToWeb2];
+    [AppDelegate jumpToWeb1];
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,6 +7,7 @@
 //
 
 #import "OrderDetail.h"
+#import "SerialGATT.h"
 
 @interface OrderDetail ()
 {
@@ -15,6 +16,7 @@
     int m_iCurOrderID;
     UITextField* m_pInputCache;
 }
+@property (weak, nonatomic) IBOutlet UIButton *printBtn;
 @end
 
 @implementation OrderDetail
@@ -106,6 +108,16 @@
 - (IBAction)OnClickBack:(id)sender
 {
     [AppDelegate jumpToMain];
+}
+
+- (IBAction)OnClickPrint:(id)sender {
+    SerialGATT* gat = [SerialGATT share];
+    if (gat.activePeripheral == nil) {
+        [AppDelegate jumpToDeviceList];
+    } else {
+//        CBPeripheral* peripheral = gat.activePeripheral;
+//        [gat write:peripheral data:<#(NSData *)#>];
+    }
 }
 
 - (IBAction)OnClickSetting:(id)sender {

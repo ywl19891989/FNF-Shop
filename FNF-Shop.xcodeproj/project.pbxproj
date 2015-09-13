@@ -182,6 +182,11 @@
 		5CFE0A6D1AB0967F005F0BBC /* home_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE0A6A1AB0967F005F0BBC /* home_icon.png */; };
 		5CFE0A6E1AB0967F005F0BBC /* user_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFE0A6B1AB0967F005F0BBC /* user_icon.png */; };
 		5CFF19A91AC4648F005E65E7 /* orderDetailBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CFF19A81AC4648F005E65E7 /* orderDetailBg.png */; };
+		5CFFD0821BA5B39200EEDA47 /* SerialGATT.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFD0811BA5B39200EEDA47 /* SerialGATT.m */; };
+		5CFFD0841BA5B3B100EEDA47 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFFD0831BA5B3B100EEDA47 /* CoreBluetooth.framework */; };
+		5CFFD0861BA5B3BA00EEDA47 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CFFD0851BA5B3BA00EEDA47 /* AudioToolbox.framework */; };
+		5CFFD08A1BA5B78A00EEDA47 /* BLEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CFFD0881BA5B78A00EEDA47 /* BLEViewController.m */; };
+		5CFFD08B1BA5B78A00EEDA47 /* BLEViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CFFD0891BA5B78A00EEDA47 /* BLEViewController.xib */; };
 		62C574E71B9DC8F9007D1BE2 /* YcKeyBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C574E61B9DC8F9007D1BE2 /* YcKeyBoardView.m */; };
 		62C574FE1B9EB5AA007D1BE2 /* MessageDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 62C574FC1B9EB5AA007D1BE2 /* MessageDetailCell.m */; };
 		62C574FF1B9EB5AA007D1BE2 /* MessageDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62C574FD1B9EB5AA007D1BE2 /* MessageDetailCell.xib */; };
@@ -515,6 +520,13 @@
 		5CFE0A6A1AB0967F005F0BBC /* home_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_icon.png; sourceTree = "<group>"; };
 		5CFE0A6B1AB0967F005F0BBC /* user_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user_icon.png; sourceTree = "<group>"; };
 		5CFF19A81AC4648F005E65E7 /* orderDetailBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orderDetailBg.png; sourceTree = "<group>"; };
+		5CFFD0801BA5B39200EEDA47 /* SerialGATT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SerialGATT.h; sourceTree = "<group>"; };
+		5CFFD0811BA5B39200EEDA47 /* SerialGATT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SerialGATT.m; sourceTree = "<group>"; };
+		5CFFD0831BA5B3B100EEDA47 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		5CFFD0851BA5B3BA00EEDA47 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5CFFD0871BA5B78A00EEDA47 /* BLEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEViewController.h; sourceTree = "<group>"; };
+		5CFFD0881BA5B78A00EEDA47 /* BLEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEViewController.m; sourceTree = "<group>"; };
+		5CFFD0891BA5B78A00EEDA47 /* BLEViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BLEViewController.xib; sourceTree = "<group>"; };
 		62C574E51B9DC8F9007D1BE2 /* YcKeyBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YcKeyBoardView.h; sourceTree = "<group>"; };
 		62C574E61B9DC8F9007D1BE2 /* YcKeyBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YcKeyBoardView.m; sourceTree = "<group>"; };
 		62C574FB1B9EB5AA007D1BE2 /* MessageDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailCell.h; sourceTree = "<group>"; };
@@ -529,6 +541,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CFFD0861BA5B3BA00EEDA47 /* AudioToolbox.framework in Frameworks */,
+				5CFFD0841BA5B3B100EEDA47 /* CoreBluetooth.framework in Frameworks */,
 				5CDEFEDC1AE6ACF3006E3CCD /* libz.dylib in Frameworks */,
 				5C0A9BCD1B9348B700892DBA /* AlipaySDK.framework in Frameworks */,
 				5CDEFEDA1AE6ACEB006E3CCD /* Security.framework in Frameworks */,
@@ -568,6 +582,7 @@
 		5C0A9AD41B9348B700892DBA /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				5CFFD07F1BA5B39200EEDA47 /* SerialGATT */,
 				62C575001B9EBD9F007D1BE2 /* YFInputBar */,
 				62C574E41B9DC8F9007D1BE2 /* YcKeyBoardView */,
 				5C1677C61B94B77000293F04 /* CKCalendar */,
@@ -905,6 +920,9 @@
 		5C0A9BAD1B9348B700892DBA /* view */ = {
 			isa = PBXGroup;
 			children = (
+				5CFFD0871BA5B78A00EEDA47 /* BLEViewController.h */,
+				5CFFD0881BA5B78A00EEDA47 /* BLEViewController.m */,
+				5CFFD0891BA5B78A00EEDA47 /* BLEViewController.xib */,
 				5C0A9BAE1B9348B700892DBA /* cell */,
 				5C0A9BB21B9348B700892DBA /* CoverView.h */,
 				5C0A9BB31B9348B700892DBA /* CoverView.m */,
@@ -1001,6 +1019,8 @@
 		5C9B5F5A1AA4B831003A7DCF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5CFFD0851BA5B3BA00EEDA47 /* AudioToolbox.framework */,
+				5CFFD0831BA5B3B100EEDA47 /* CoreBluetooth.framework */,
 				5CDEFEDB1AE6ACF3006E3CCD /* libz.dylib */,
 				5CDEFED91AE6ACEB006E3CCD /* Security.framework */,
 				5CDEFED71AE6ACCF006E3CCD /* SystemConfiguration.framework */,
@@ -1085,6 +1105,15 @@
 			);
 			path = Resources;
 			sourceTree = SOURCE_ROOT;
+		};
+		5CFFD07F1BA5B39200EEDA47 /* SerialGATT */ = {
+			isa = PBXGroup;
+			children = (
+				5CFFD0801BA5B39200EEDA47 /* SerialGATT.h */,
+				5CFFD0811BA5B39200EEDA47 /* SerialGATT.m */,
+			);
+			path = SerialGATT;
+			sourceTree = "<group>";
 		};
 		62C574E41B9DC8F9007D1BE2 /* YcKeyBoardView */ = {
 			isa = PBXGroup;
@@ -1184,6 +1213,7 @@
 				5C1677D21B94B77000293F04 /* right_arrow@2x.png in Resources */,
 				5C3518DF1B9C82A600637444 /* WebView.xib in Resources */,
 				5C344E121AAF49970030EAB1 /* home_btn7_2.png in Resources */,
+				5CFFD08B1BA5B78A00EEDA47 /* BLEViewController.xib in Resources */,
 				5C0A9C211B935AAB00892DBA /* Turnover1_03.png in Resources */,
 				5CFDC47A1ADEB5D60081B052 /* my_alipay_code.png in Resources */,
 				5C0A9C181B9359BD00892DBA /* message2_13.png in Resources */,
@@ -1300,6 +1330,7 @@
 				5C0A9BD91B9348B700892DBA /* Base64.m in Sources */,
 				62C574FE1B9EB5AA007D1BE2 /* MessageDetailCell.m in Sources */,
 				5C0A9BC71B9348B700892DBA /* AFSecurityPolicy.m in Sources */,
+				5CFFD0821BA5B39200EEDA47 /* SerialGATT.m in Sources */,
 				5C0A9BD51B9348B700892DBA /* NSDataEx.m in Sources */,
 				5C0A9BC51B9348B700892DBA /* AFJSONUtilities.m in Sources */,
 				62C574E71B9DC8F9007D1BE2 /* YcKeyBoardView.m in Sources */,
@@ -1312,6 +1343,7 @@
 				5C0A9BCB1B9348B700892DBA /* AFURLSessionManager.m in Sources */,
 				5C0A9BF21B9348B800892DBA /* pinyin.c in Sources */,
 				5C0A9BF31B9348B800892DBA /* PinyinFormatter.m in Sources */,
+				5CFFD08A1BA5B78A00EEDA47 /* BLEViewController.m in Sources */,
 				5C0A9BE01B9348B700892DBA /* JGProgressHUDFadeZoomAnimation.m in Sources */,
 				5C0A9BFA1B9348B800892DBA /* UITableView+DataSourceBlocks.m in Sources */,
 				5C3518ED1B9C9AAE00637444 /* MessageListCell.m in Sources */,

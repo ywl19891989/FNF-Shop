@@ -22,6 +22,7 @@
 + (void) jumpToWeb2;
 + (void) jumpToMsgList;
 + (void) jumpToMsgDetail;
++ (void) jumpToDeviceList;
 
 + (void) ShowTips:(NSString*)tipsText;
 + (void) ShowToast:(NSString*)toastText;

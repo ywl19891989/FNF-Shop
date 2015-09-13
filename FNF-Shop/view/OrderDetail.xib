@@ -19,6 +19,7 @@
                 <outlet property="paymentLabel" destination="Yw1-bf-8VI" id="HaR-pb-mwT"/>
                 <outlet property="phoneNumLabel" destination="31a-tC-wlr" id="jrc-yc-RlJ"/>
                 <outlet property="pickerView" destination="CzV-o9-uTN" id="4md-2L-RNv"/>
+                <outlet property="printBtn" destination="90y-d7-TP7" id="3Vp-NL-koh"/>
                 <outlet property="resphoneNumLabel" destination="AFQ-UM-USh" id="NpN-tw-DGE"/>
                 <outlet property="scrollView" destination="Kqr-k3-HGo" id="d0V-JO-I4V"/>
                 <outlet property="timePicker" destination="hmb-lX-mEd" id="dqD-uH-37F"/>
@@ -60,17 +61,6 @@
                             </state>
                             <connections>
                                 <action selector="OnClickBack:" destination="-1" eventType="touchUpInside" id="EsH-NI-auJ"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="p3k-l0-XZe">
-                            <rect key="frame" x="251" y="-2" width="70" height="44"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                            <state key="normal" title="Setting">
-                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                            <connections>
-                                <action selector="OnClickSetting:" destination="-1" eventType="touchUpInside" id="Drm-IB-aNR"/>
                             </connections>
                         </button>
                     </subviews>
@@ -362,6 +352,17 @@
                             </state>
                             <connections>
                                 <action selector="OnClickBtn:" destination="-1" eventType="touchUpInside" id="GzH-5R-3J4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="90y-d7-TP7">
+                            <rect key="frame" x="20" y="430" width="280" height="40"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.2470588235" green="0.60784313729999995" blue="0.78823529410000004" alpha="1" colorSpace="deviceRGB"/>
+                            <state key="normal" title="Print">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="OnClickPrint:" destination="-1" eventType="touchUpInside" id="Mcv-dp-Job"/>
                             </connections>
                         </button>
                     </subviews>

@@ -18,6 +18,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (weak, nonatomic) IBOutlet TableViewWithBlock *tableView;
+@property (weak, nonatomic) IBOutlet YFInputBar *inputBat;
 @end
 
 @implementation MessageDetail
@@ -75,9 +76,9 @@
     
     [self.titleLabel setText:detailInfo[@"MerchantName"]];
     
-    CGRect frame = self.view.frame;
+    CGRect frame = [UIScreen mainScreen].applicationFrame;
     
-    YFInputBar *inputBar = [[YFInputBar alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(frame) - 44, 320, 44)];
+    YFInputBar *inputBar = [[YFInputBar alloc] initWithFrame:CGRectMake(0, frame.size.height + frame.origin.y - 44, 320, 44)];
     [inputBar.sendBtn setTitle:@"Send" forState:UIControlStateNormal];
     [inputBar.sendBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
     inputBar.backgroundColor = [UIColor colorWithRed:230/255.0 green:230/255.0 blue:230/255.0 alpha:1];
@@ -93,6 +94,10 @@
 {
     
     NSLog(@"%@", str);
+    
+    if ([str length] == 0) {
+        return;
+    }
 
     NSDictionary* detailInfo = [NetWorkManager GetCurMsgInfo];
 
