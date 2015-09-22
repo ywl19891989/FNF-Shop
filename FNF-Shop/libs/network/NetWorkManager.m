@@ -16,7 +16,7 @@
 
 @implementation NetWorkManager
 
-static NSString* urlBase = @"http://FNF.haofengsoft.com/WebService/";
+static NSString* urlBase = @"http://www.fnf.net.au/WebService/";
 static NSString* m_sVersion = @"1.0";
 static NSString* m_sDeviceType = @"iOS";
 #define m_sDeviceNo [SecurityData deviceId]
@@ -51,8 +51,8 @@ static NetWorkManager* instance = nil;
     m_pUserId = info[USERID_KEY];
     
     NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] initWithDictionary:@{}];
-
-    if (m_pUserId != nil) {
+    
+    if (m_pUserId) {
         [NetWorkManager SET_IF_NOT_NIL:userInfo :USERID_KEY :m_pUserId];
     }
     
@@ -64,6 +64,10 @@ static NetWorkManager* instance = nil;
     
     //创建一个dic，写到plist文件里
     [userInfo writeToFile:filename atomically:YES];
+    
+    
+    userInfo = [NSDictionary dictionaryWithContentsOfFile:filename];
+    NSLog(@"========> %@", userInfo);
 }
 
 + (void) InitUserInfo
@@ -73,7 +77,7 @@ static NetWorkManager* instance = nil;
     NSString *filename = [path stringByAppendingPathComponent:SAVE_FILE];
     NSDictionary* userInfo = [NSDictionary dictionaryWithContentsOfFile:filename];
     
-    if (userInfo[USERID_KEY])
+    if (userInfo && userInfo[USERID_KEY])
     {
         [NetWorkManager SetUserInfo:userInfo];
     }
@@ -278,6 +282,7 @@ static SecKeyRef _public_key=nil;
 + (void)GetOrderListByState:(int)state WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
 {
     NSDictionary* param = @{
+                    @"MerchanID": [NetWorkManager GetUserId],
                     @"PageIndex": @"0",
                     @"PageSize": @"999",
                     @"Status" : [NSString stringWithFormat:@"%d", state],
@@ -289,18 +294,35 @@ static SecKeyRef _public_key=nil;
 + (void)GetOrderDetailByID:(NSInteger)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
 {
     NSMutableDictionary* param = [NSMutableDictionary dictionaryWithCapacity:10];
-    [param setValue:[NSNumber numberWithInt:(NSUInteger)orderId] forKey:@"ID"];
+    [param setValue:[NSNumber numberWithInt:(NSUInteger)orderId] forKey:@"OrderID"];
     
     [NetWorkManager POST:@"SellerService.asmx/GetOrderDetailByID" withParameters:param success:success failure:failure];
+}
+
++ (void)GetOrderPrintByID:(NSString*)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+    NSDictionary* param = @{
+                            @"OrderID": orderId,
+                           };
+    
+    [NetWorkManager POST:@"SellerService.asmx/PrintOrderDetail" withParameters:param success:success failure:failure];
 }
 
 + (void)ConfirmOrderByID:(NSInteger)orderId AndEsTime:(NSString*)time WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
 {
     NSMutableDictionary* param = [NSMutableDictionary dictionaryWithCapacity:10];
     [param setValue:[NSNumber numberWithInt:(NSUInteger)orderId] forKey:@"OrderID"];
-    [param setValue:time forKey:@"DrvActTime"];
+    [param setValue:time forKey:@"UpdateTime"];
     
-    [NetWorkManager POST:@"SellerService.asmx/UpdateDriverDeliveryTime" withParameters:param success:success failure:failure];
+    [NetWorkManager POST:@"SellerService.asmx/UpdateOrder" withParameters:param success:success failure:failure];
+}
+
++ (void)FinishCookingByID:(NSInteger)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
+{
+    NSMutableDictionary* param = [NSMutableDictionary dictionaryWithCapacity:10];
+    [param setValue:[NSNumber numberWithInt:(NSUInteger)orderId] forKey:@"OrderID"];
+    
+    [NetWorkManager POST:@"SellerService.asmx/UpdateOrder" withParameters:param success:success failure:failure];
 }
 
 + (void)GetSellListStartDate:(NSString*)startDate EndDate:(NSString*)endDate WithSuccessWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure
@@ -316,6 +338,7 @@ static SecKeyRef _public_key=nil;
         endDate = @"";
     }
     [param setValue:endDate forKey:@"ETime"];   //    结束时间 注：如果查询单独一天，此项为""
+    [param setValue:[NetWorkManager GetUserId] forKeyPath:@"MerchanID"];
     
     [NetWorkManager POST:@"SellerService.asmx/GetOrderAmountList" withParameters:param success:success failure:failure];
 }

@@ -13,7 +13,9 @@
                 <outlet property="changeTitle" destination="BWo-9U-p6K" id="H1C-QI-rLZ"/>
                 <outlet property="cusSetTimeLabel" destination="tDR-0a-Sn3" id="oXW-L7-xV3"/>
                 <outlet property="deliverView" destination="jtk-5y-ZvI" id="PVv-nh-phM"/>
+                <outlet property="estamiteView" destination="DTq-QJ-IOD" id="CeK-Ql-UOm"/>
                 <outlet property="estimateTimeLabel" destination="Uo1-el-T0F" id="HLc-Dm-kzE"/>
+                <outlet property="itemListBtn" destination="OML-qN-Tab" id="jP0-zt-7ko"/>
                 <outlet property="notesLabel" destination="wOR-JU-eOQ" id="H4X-gC-dau"/>
                 <outlet property="onlyBtn" destination="Ssd-6k-Kya" id="yHU-m1-TFV"/>
                 <outlet property="paymentLabel" destination="Yw1-bf-8VI" id="HaR-pb-mwT"/>
@@ -61,6 +63,17 @@
                             </state>
                             <connections>
                                 <action selector="OnClickBack:" destination="-1" eventType="touchUpInside" id="EsH-NI-auJ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OML-qN-Tab">
+                            <rect key="frame" x="250" y="6" width="62" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="ItemList">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="OnClickItemList:" destination="-1" eventType="touchUpInside" id="Wd9-HP-Ae7"/>
                             </connections>
                         </button>
                     </subviews>

@@ -25,7 +25,7 @@
 - (void)setInfo:(NSDictionary *)info
 {
     [self.orderNum setText:[NSString stringWithFormat:@"%@", info[@"OrderCode"]]];
-    [self.orderDate setText:[NSString stringWithFormat:@"%@", info[@"CreateTime"]]];
+    [self.orderDate setText:[NSString stringWithFormat:@"%@", info[@"StrCreateTime"]]];
 //    [self.orderCity setText:[NSString stringWithFormat:@"%@", info[@"City"]]];
     [self.orderRemark setText:[NSString stringWithFormat:@"%@", info[@"Remark"]]];
 }

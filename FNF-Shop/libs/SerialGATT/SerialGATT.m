@@ -208,8 +208,6 @@ static SerialGATT* instance = nil;
 -(void)centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
     printf("disconnected to the active peripheral\n");
-    if(activePeripheral != nil)
-    [delegate setDisconnect];
     activePeripheral = nil;
 }
 
@@ -331,7 +329,6 @@ static SerialGATT* instance = nil;
 {
     if (!error) {
         printf("Updated notification state for characteristic with UUID %s on service with  UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:characteristic.UUID],[self CBUUIDToString:characteristic.service.UUID],[self UUIDToString:(__bridge CFUUIDRef )peripheral.identifier]);
-        [delegate setConnect];
     }
     else {
         printf("Error in setting notification state for characteristic with UUID %s on service with  UUID %s on peripheral with UUID %s\r\n",[self CBUUIDToString:characteristic.UUID],[self CBUUIDToString:characteristic.service.UUID],[self UUIDToString:(__bridge CFUUIDRef )peripheral.identifier]);

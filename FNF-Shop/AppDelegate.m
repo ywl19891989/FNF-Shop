@@ -44,7 +44,7 @@ static UIWindow* mainWindow;
 
 + (void)ShowTips:(NSString*)tipText
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"信息提示" message:tipText delegate:self cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Message" message:tipText delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
     alert.tag = 10000;
     [alert show];
 }
@@ -98,12 +98,13 @@ static MBProgressHUD *loadingAlertView = nil;
     [APService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge |
                                                    UIRemoteNotificationTypeSound |
                                                    UIRemoteNotificationTypeAlert)];
-  
-
+    
+    
     [APService setupWithOption:launchOptions];
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kAPNetworkDidReceiveMessageNotification object:nil];
+    
     
 //    13fb5442-a031-40ee-8310-0c26c1819d78
     
@@ -150,6 +151,10 @@ static NSString* pushOrderId = nil;
     NSLog(@"userInfo1 %@", userInfo);
     
     [APService handleRemoteNotification:userInfo];
+    
+    if ([NetWorkManager GetUserId]) {
+        [AppDelegate jumpToMain];
+    }
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
@@ -160,6 +165,10 @@ static NSString* pushOrderId = nil;
     // IOS 7 Support Required
     [APService handleRemoteNotification:userInfo];
     completionHandler(UIBackgroundFetchResultNewData);
+    
+    if ([NetWorkManager GetUserId]) {
+        [AppDelegate jumpToMain];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

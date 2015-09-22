@@ -61,12 +61,14 @@
 
 - (IBAction)OnClickBtn3:(id)sender
 {
-    [AppDelegate jumpToWeb2];
+//    [AppDelegate jumpToWeb2];
+    [AppDelegate ShowTips:@"Coming soon!"];
 }
 
 - (IBAction)OnClickBtn4:(id)sender
 {
-    [AppDelegate jumpToWeb1];
+//    [AppDelegate jumpToWeb1];
+    [AppDelegate ShowTips:@"Coming soon!"];
 }
 
 - (void)didReceiveMemoryWarning

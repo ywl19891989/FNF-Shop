@@ -59,8 +59,10 @@
             [NetWorkManager GetMessageDetail:info[@"OrderCode"] WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
                 
                 NSDictionary* detailInfo = data;
-                [NetWorkManager SetCurMsgInfo:detailInfo];
-                [AppDelegate jumpToMsgDetail];
+                if (data) {
+                    [NetWorkManager SetCurMsgInfo:detailInfo];
+                    [AppDelegate jumpToMsgDetail];
+                }
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                 
             }];

@@ -51,6 +51,9 @@
     
     int state = (int)([control selectedSegmentIndex] + 1);
     
+    int arr[4] = { 1, 5, 6, 2 };
+    state = arr[state - 1];
+    
     [NetWorkManager GetOrderListByState:state WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
         NSArray* list = data[@"NewList"];
         [NetWorkManager SetNewOrderList:list];

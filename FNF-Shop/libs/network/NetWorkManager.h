@@ -32,12 +32,15 @@ typedef void (^FailureCallBack)(AFHTTPRequestOperation *operation, NSError *erro
 + (void) Login:(NSDictionary*)param WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) GetOrderListByState:(int)state WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) GetOrderDetailByID:(NSInteger)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
++ (void) FinishCookingByID:(NSInteger)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) ConfirmOrderByID:(NSInteger)orderId AndEsTime:(NSString*)time WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) GetSellListStartDate:(NSString*)startDate EndDate:(NSString*)endDate WithSuccessWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) GetMessageListWithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) GetMessageDetail:(NSString*)orderCode WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) SendMessage:(NSDictionary*)param WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 + (void) ReadMessage:(NSDictionary*)param WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
+
++ (void) GetOrderPrintByID:(NSString*)orderId WithSuccess:(SuccessCallBack)success failure:(FailureCallBack)failure;
 
 + (void) SetUserInfo:(NSDictionary*)info;
 + (void) InitUserInfo;

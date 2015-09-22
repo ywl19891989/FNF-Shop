@@ -25,9 +25,24 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        CGRect rect = self.view.bounds;
+        rect.origin.y = [self getTopOffsetY];
+        rect.size.height = rect.size.height + [self getTopOffsetY];
+        [self.view setFrame:rect];
+        [self.view setBounds:rect];
     }
     return self;
+}
+
+- (CGFloat)getTopOffsetY
+{
+    float ver = [[[UIDevice currentDevice] systemVersion] floatValue];
+    if (ver > 6.0)
+    {
+        return -20;
+    }
+    
+    return 0;
 }
 
 - (void)viewDidLoad
@@ -42,6 +57,16 @@
     sensor.delegate = self;
     
     peripheralViewControllerArray = [[NSMutableArray alloc] init];
+}
+
+- (void)setConnect
+{
+    
+}
+
+- (void)setDisconnect
+{
+    
 }
 
 - (IBAction)OnClickBack:(id)sender
