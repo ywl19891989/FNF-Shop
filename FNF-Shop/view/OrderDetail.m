@@ -425,22 +425,27 @@
     [gat write:peripheral data:data];
 }
 
-- (IBAction)OnClickSetting:(id)sender {
-    
-}
-
 - (IBAction)OnClickAddr:(id)sender {
+    [NetWorkManager SetOrderAddr:[self.addressLable text]];
+    [AppDelegate jumpToMapView];
 }
 
 - (IBAction)OnClickCall:(id)sender {
-    [NetWorkManager Call:[self.phoneNumLabel text]];
+    NSString* num = [self.phoneNumLabel text];
+    num = [num stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [NetWorkManager Call:num];
+    NSLog(@"======> OnClickCall %@", num);
 }
 
 - (IBAction)OnClickNotes:(id)sender {
+    [AppDelegate ShowTips:m_pCurOrderInfo[@"Remark"]];
 }
 
 - (IBAction)OnClickResCall:(id)sender {
-    [NetWorkManager Call:[self.resphoneNumLabel text]];
+    NSString* num = [self.resphoneNumLabel text];
+    num = [num stringByReplacingOccurrencesOfString:@" " withString:@""];
+    [NetWorkManager Call:num];
+    NSLog(@"======> OnClickResCall %@", num);
 }
 
 - (IBAction)OnClickBtn:(id)sender

@@ -10,6 +10,8 @@
 #import "CKCalendarView.h"
 #import "TransacationCell.h"
 
+#define STR(val) [NSString stringWithFormat:@"%.2f", [val floatValue]]
+
 @interface TransactionView () <CKCalendarDelegate>
 {
     int m_iSelectCout;
@@ -18,9 +20,15 @@
     NSDate * m_pEndDate;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *titleOrder;
 @property (weak, nonatomic) IBOutlet TableViewWithBlock *m_pTableView;
 @property (weak, nonatomic) IBOutlet UILabel *selectDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalNumLabel;
+@property (weak, nonatomic) IBOutlet UILabel *totalDiscount;
+@property (weak, nonatomic) IBOutlet UILabel *totalSurchage;
+@property (weak, nonatomic) IBOutlet UILabel *totalFreightee;
+@property (weak, nonatomic) IBOutlet UILabel *totalCommission;
+@property (weak, nonatomic) IBOutlet UILabel *totalAmount;
 
 @end
 
@@ -39,7 +47,7 @@
 - (NSString*) stringFromDate:(NSDate*) date
 {
 	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-	[formatter setDateFormat:@"yyyy.MM.dd"];
+	[formatter setDateFormat:@"yyyy-MM-dd"];
 	NSString *str = [formatter stringFromDate:date];
 	return str;
 }
@@ -77,16 +85,21 @@
         
         [self.selectDateLabel setText:[NSString stringWithFormat:@"%@ - %@", startDateStr, endDateStr]];
         
+        [self.titleOrder setText:@"Date"];
+        if ([startDateStr isEqualToString:endDateStr]) {
+            [self.titleOrder setText:@"OrderNo"];
+        }
+        
         [NetWorkManager GetSellListStartDate:startDateStr EndDate:endDateStr WithSuccessWithSuccess:^(AFHTTPRequestOperation *operation, id data) {
             
-            NSArray* dataList = data;
+            NSArray* dataList = data[@"OrderSellerList"];
             
-            float total = 0;
-            for (int i = 0; i < [dataList count]; i++) {
-                NSString* amountStr = [dataList objectAtIndex:i][@"Amount"];
-                total = total + [amountStr floatValue];
-            }
-            [self.totalNumLabel setText:[NSString stringWithFormat:@"%.2f", total]];
+            [self.totalNumLabel setText:STR(data[@"TotalIncome"])];
+            [self.totalDiscount setText:STR(data[@"TotalDiscount"])];
+            [self.totalSurchage setText:STR(data[@"TotalSurcharge"])];
+            [self.totalFreightee setText:STR(data[@"TotalFreightFee"])];
+            [self.totalCommission setText:STR(data[@"TotalCommission"])];
+            [self.totalAmount setText:STR(data[@"TotalAmount"])];
             
             [self.m_pTableView initTableViewDataSourceAndDelegate:^NSInteger(UITableView *tableView, NSInteger section) {
                 return (NSUInteger)[dataList count];

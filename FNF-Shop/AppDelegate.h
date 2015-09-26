@@ -23,6 +23,7 @@
 + (void) jumpToMsgList;
 + (void) jumpToMsgDetail;
 + (void) jumpToDeviceList;
++ (void) jumpToMapView;
 
 + (void) ShowTips:(NSString*)tipsText;
 + (void) ShowToast:(NSString*)toastText;

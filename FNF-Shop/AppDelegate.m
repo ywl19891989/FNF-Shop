@@ -22,6 +22,7 @@
 #import "MessageList.h"
 #import "MessageDetail.h"
 #import "BLEViewController.h"
+#import "MapView.h"
 
 @implementation AppDelegate
 
@@ -41,6 +42,7 @@ static UIWindow* mainWindow;
 + (void)jumpToMsgList { CREATE_VIEW(MessageList); }
 + (void)jumpToMsgDetail { CREATE_VIEW(MessageDetail); }
 + (void)jumpToDeviceList { CREATE_VIEW(BLEViewController); }
++ (void)jumpToMapView { CREATE_VIEW(MapView); }
 
 + (void)ShowTips:(NSString*)tipText
 {
@@ -72,7 +74,7 @@ static MBProgressHUD *loadingAlertView = nil;
 {
     loadingAlertView = [MBProgressHUD showHUDAddedTo:mainWindow animated:YES];
     loadingAlertView.userInteractionEnabled = true;
-	loadingAlertView.labelText = @"加载中";
+	loadingAlertView.labelText = @"Loading...";
 }
 
 + (void)HideLoading
@@ -139,7 +141,6 @@ static MBProgressHUD *loadingAlertView = nil;
     
     // Required
     [APService registerDeviceToken:deviceToken];
-    
     
 }
 

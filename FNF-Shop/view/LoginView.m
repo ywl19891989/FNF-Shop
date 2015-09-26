@@ -52,6 +52,7 @@
         [NetWorkManager Login:param WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
             if (data) {
                 NSMutableDictionary* realData = [NSMutableDictionary dictionaryWithDictionary:data[@"Merchant"]];
+                realData[@"UserName"] = email;
                 [NetWorkManager SetUserInfo:realData];
                 [AppDelegate jumpToUserView];
             }

@@ -7,6 +7,7 @@
 //
 
 #import "UserView.h"
+#import "APService.h"
 
 @interface UserView ()
 
@@ -28,6 +29,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    NSString* alias = [NetWorkManager GetUserName];
+    [APService setAlias:alias callbackSelector:@selector(OnSuccess) object:self];
+}
+
+- (void)OnSuccess
+{
+    NSLog(@"set alias success!");
 }
 
 - (IBAction)OnClickBack:(id)sender

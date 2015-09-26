@@ -148,6 +148,8 @@
 		5C9B5F5E1AA4B831003A7DCF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9B5F5D1AA4B831003A7DCF /* CoreGraphics.framework */; };
 		5C9B5F601AA4B831003A7DCF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C9B5F5F1AA4B831003A7DCF /* UIKit.framework */; };
 		5CAA286A1AA5F8DE0062B9FC /* liubianxing_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 5CAA28691AA5F8DE0062B9FC /* liubianxing_03.png */; };
+		5CBBF6291BB59095002057F6 /* MapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBBF6271BB59095002057F6 /* MapView.m */; };
+		5CBBF62A1BB59095002057F6 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CBBF6281BB59095002057F6 /* MapView.xib */; };
 		5CDEFED21AE6ACA4006E3CCD /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDEFED11AE6ACA4006E3CCD /* CFNetwork.framework */; };
 		5CDEFED41AE6ACB1006E3CCD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDEFED31AE6ACB1006E3CCD /* CoreFoundation.framework */; };
 		5CDEFED61AE6ACBB006E3CCD /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CDEFED51AE6ACBB006E3CCD /* CoreTelephony.framework */; };
@@ -488,6 +490,9 @@
 		5C9B5F5F1AA4B831003A7DCF /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5C9B5F741AA4B831003A7DCF /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		5CAA28691AA5F8DE0062B9FC /* liubianxing_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = liubianxing_03.png; sourceTree = "<group>"; };
+		5CBBF6261BB59095002057F6 /* MapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapView.h; sourceTree = "<group>"; };
+		5CBBF6271BB59095002057F6 /* MapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapView.m; sourceTree = "<group>"; };
+		5CBBF6281BB59095002057F6 /* MapView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		5CDEFED11AE6ACA4006E3CCD /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		5CDEFED31AE6ACB1006E3CCD /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		5CDEFED51AE6ACBB006E3CCD /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -955,6 +960,9 @@
 				5C4FDA201B9D123000327710 /* MessageDetail.h */,
 				5C4FDA211B9D123000327710 /* MessageDetail.m */,
 				5C4FDA221B9D123000327710 /* MessageDetail.xib */,
+				5CBBF6261BB59095002057F6 /* MapView.h */,
+				5CBBF6271BB59095002057F6 /* MapView.m */,
+				5CBBF6281BB59095002057F6 /* MapView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1282,6 +1290,7 @@
 				5C1A9D0A1B949EC000198707 /* bottom_home2.png in Resources */,
 				5CE9EA161AB33852004D0D79 /* round_rect.png in Resources */,
 				5C344E101AAF49970030EAB1 /* home_btn6_2.png in Resources */,
+				5CBBF62A1BB59095002057F6 /* MapView.xib in Resources */,
 				5C1A9D121B949ECB00198707 /* menu2_store.png in Resources */,
 				5C0A9BE71B9348B800892DBA /* PushConfig.plist in Resources */,
 				5C344E0A1AAF49970030EAB1 /* home_btn3_2.png in Resources */,
@@ -1348,6 +1357,7 @@
 				5C0A9BDD1B9348B700892DBA /* JGProgressHUD.m in Sources */,
 				5C0A9BCB1B9348B700892DBA /* AFURLSessionManager.m in Sources */,
 				5C0A9BF21B9348B800892DBA /* pinyin.c in Sources */,
+				5CBBF6291BB59095002057F6 /* MapView.m in Sources */,
 				5C0A9BF31B9348B800892DBA /* PinyinFormatter.m in Sources */,
 				5CFFD08A1BA5B78A00EEDA47 /* BLEViewController.m in Sources */,
 				5C0A9BE01B9348B700892DBA /* JGProgressHUDFadeZoomAnimation.m in Sources */,
@@ -1430,7 +1440,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "b35904b7-1370-4ffc-bc79-c495e1b55c5d";
+				PROVISIONING_PROFILE = "5994c72d-dbae-4369-aa83-d9a2d1ca990a";
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s arm64";
 			};
@@ -1464,7 +1474,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PROVISIONING_PROFILE = "aa4e32e1-e7cb-4f9f-978e-806703a2e5f3";
+				PROVISIONING_PROFILE = "c43c1669-b2f5-4f5a-b96a-5e414d1a0125";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -1536,7 +1546,7 @@
 					"$(PROJECT_DIR)/FNF-Shop/libs/JPush",
 				);
 				PRODUCT_NAME = "FNF-Shop";
-				PROVISIONING_PROFILE = "aa4e32e1-e7cb-4f9f-978e-806703a2e5f3";
+				PROVISIONING_PROFILE = "c43c1669-b2f5-4f5a-b96a-5e414d1a0125";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};

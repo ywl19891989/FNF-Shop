@@ -53,5 +53,6 @@ NM_PROPERTY_DECLARE(NSDictionary*, CurMsgInfo);
 
 NM_PROPERTY_DECLARE(NSString*, UserId);
 NM_PROPERTY_DECLARE(NSString*, UserName);
+NM_PROPERTY_DECLARE(NSString*, OrderAddr);
 
 @end

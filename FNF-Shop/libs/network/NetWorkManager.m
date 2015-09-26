@@ -49,11 +49,13 @@ static NetWorkManager* instance = nil;
 + (void)SetUserInfo:(NSDictionary *)info
 {
     m_pUserId = info[USERID_KEY];
+    m_pUserName = info[USERNAME_KEY];
     
     NSMutableDictionary* userInfo = [[NSMutableDictionary alloc] initWithDictionary:@{}];
     
     if (m_pUserId) {
         [NetWorkManager SET_IF_NOT_NIL:userInfo :USERID_KEY :m_pUserId];
+        [NetWorkManager SET_IF_NOT_NIL:userInfo :USERNAME_KEY :m_pUserName];
     }
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,NSUserDomainMask,YES);
@@ -90,6 +92,7 @@ NM_PROPERTY_DEFINE(NSArray*, ConfirmedOrderList);
 NM_PROPERTY_DEFINE(NSArray*, FinishedOrderList);
 NM_PROPERTY_DEFINE(NSDictionary*, CurOrderInfo);
 NM_PROPERTY_DEFINE(NSDictionary*, CurMsgInfo);
+NM_PROPERTY_DEFINE(NSString*, OrderAddr);
 
 //----------------------------------------------
 
@@ -159,7 +162,7 @@ NM_PROPERTY_DEFINE(NSDictionary*, CurMsgInfo);
             success(operation, nil);
         } else {
             success(operation, dic[@"msg"]);
-            [AppDelegate ShowToast:@"加载完成!"];
+            [AppDelegate ShowToast:@"Load Completed!"];
         }
     } failure:^(AFHTTPRequestOperation *operation, id responseObject){
         [AppDelegate HideLoading];
@@ -274,7 +277,7 @@ static SecKeyRef _public_key=nil;
                             @"Account": data[@"UserEmail"],
                             @"UserKey": data[@"UserPwd"],
                             @"LastLoginControlID": [SecurityData deviceId],
-                            @"JpushID": @"f676f8cd0284fd6ca09e51e6",
+                            @"JpushID": @"adsads",
                             };
     [NetWorkManager POST:@"SellerService.asmx/SellerLogin" withParameters:param success:success failure:failure];
 }
@@ -338,7 +341,7 @@ static SecKeyRef _public_key=nil;
         endDate = @"";
     }
     [param setValue:endDate forKey:@"ETime"];   //    结束时间 注：如果查询单独一天，此项为""
-    [param setValue:[NetWorkManager GetUserId] forKeyPath:@"MerchanID"];
+    [param setValue:[NetWorkManager GetUserId] forKeyPath:@"MerchantID"];
     
     [NetWorkManager POST:@"SellerService.asmx/GetOrderAmountList" withParameters:param success:success failure:failure];
 }
