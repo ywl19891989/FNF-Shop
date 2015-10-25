@@ -316,6 +316,9 @@
     
     [self Blank:10];
     [self Enter];
+    
+    [self CutPaper];
+    [self Beep];
 }
 
 - (NSString*)GetFullStr:(NSString*)left :(NSString*)right
@@ -410,6 +413,33 @@
     a[0] = 0x1B;
     a[1] = 0x64;
     a[2] = row & 0xff;
+    
+    NSData* data = [NSData dataWithBytes:a length:3];
+    [gat write:peripheral data:data];
+}
+
+- (void)CutPaper
+{
+    SerialGATT* gat = [SerialGATT share];
+    CBPeripheral* peripheral = gat.activePeripheral;
+    Byte a[3] = { 0 };
+    a[0] = 0x1D;
+    a[1] = 0x56;
+    a[2] = 0x01;
+    
+    NSData* data = [NSData dataWithBytes:a length:3];
+    [gat write:peripheral data:data];
+}
+
+- (void)Beep
+{
+    SerialGATT* gat = [SerialGATT share];
+    CBPeripheral* peripheral = gat.activePeripheral;
+    Byte a[4] = { 0 };
+    a[0] = 0x1B;
+    a[1] = 0x42;
+    a[2] = 0x03;
+    a[3] = 0x02;
     
     NSData* data = [NSData dataWithBytes:a length:3];
     [gat write:peripheral data:data];
