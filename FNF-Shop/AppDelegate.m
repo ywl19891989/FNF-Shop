@@ -106,6 +106,8 @@ static MBProgressHUD *loadingAlertView = nil;
     
     NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
     [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kAPNetworkDidReceiveMessageNotification object:nil];
+    [defaultCenter addObserver:self selector:@selector(networkDidRegisterNoti:) name:kAPNetworkDidRegisterNotification object:nil];
+    [defaultCenter addObserver:self selector:@selector(networkDidRecveError:) name:kAPServiceErrorNotification object:nil];
     
     
 //    13fb5442-a031-40ee-8310-0c26c1819d78
@@ -130,18 +132,32 @@ static MBProgressHUD *loadingAlertView = nil;
     return YES;
 }
 
+- (void)networkDidRecveError:(NSNotification *)notification {
+    NSDictionary * userInfo = [notification userInfo];
+    
+    NSLog(@"networkDidRecveError: %@", userInfo);
+}
+
+- (void)networkDidRegisterNoti:(NSNotification *)notification {
+    NSDictionary * userInfo = [notification userInfo];
+    
+    NSLog(@"networkDidRegisterNoti: %@", userInfo);
+}
+
 - (void)networkDidReceiveMessage:(NSNotification *)notification {
     NSDictionary * userInfo = [notification userInfo];
     NSDictionary *extras = [userInfo valueForKey:@"extras"];
     
-    NSLog(@"extras: %@", extras);
+    NSLog(@"networkDidReceiveMessage: %@", extras);
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
     // Required
     [APService registerDeviceToken:deviceToken];
+    NSLog(@"didRegisterForRemoteNotificationsWithDeviceToken %@", deviceToken);
     
+    NSLog(@"[APService registrionID] %@", [APService registrionID]);
 }
 
 static NSString* pushOrderId = nil;

@@ -167,9 +167,9 @@
     NSDictionary* curOrderInfo = [NetWorkManager GetCurOrderInfo];
     
     SerialGATT* gat = [SerialGATT share];
-    if (gat.activePeripheral == nil) {
-        [AppDelegate jumpToDeviceList];
-    } else {
+//    if (gat.activePeripheral == nil) {
+//        [AppDelegate jumpToDeviceList];
+//    } else {
     
         
         [NetWorkManager GetOrderPrintByID:curOrderInfo[@"ID"] WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
@@ -197,12 +197,14 @@
             
             if (data) {
                 [self PrintOrder:data];
+                [self PrintOrder:data];
+                [self PrintOrder:data];
             }
             
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
         }];
-    }
+//    }
 }
 
 #define fullLine @"------------------------------------------------"
@@ -268,10 +270,32 @@
         NSDictionary* dealData = [dealArr objectAtIndex:i];
         [self BigFont];
         [self Align:ALIGN_LEFT];
-        NSString* str = [NSString stringWithFormat:@"x%@   $%@", dealData[@"BuyQty"], dealData[@"Price"]];
+        NSString* str = [NSString stringWithFormat:@"x%@     $%@", dealData[@"BuyQty"], dealData[@"Price"]];
         [self WriteStr:[self GetFullStr:dealData[@"ProductName"] :str]];
         [self Enter];
+        
+        NSArray* guige = dealData[@"OptionsList"];
+        if ([guige count]) {
+            for (int j = 0; j < [guige count]; j++) {
+                NSDictionary* guigeData = [guige objectAtIndex:j];
+                NSString* str = [NSString stringWithFormat:@"%@     %@", guigeData[@"SpecValue"], guigeData[@"SpecPrice"]];
+                [self WriteStr:[self GetFullStr:guigeData[@"SpecName"] :str]];
+                [self Enter];
+            }
+        }
+        
+        NSArray* addition = dealData[@"AdditionalList"];
+        if ([addition count]) {
+            for (int j = 0; j < [addition count]; j++) {
+                NSDictionary* addData = [addition objectAtIndex:j];
+                NSString* str = [NSString stringWithFormat:@"%@     $%@", addData[@"AdditionalName"], addData[@"AdditionalPrice"]];
+                [self WriteStr:[self GetFullStr:addData[@"ProductName"] :str]];
+                [self Enter];
+            }
+        }
     }
+    
+//    SubTotal  DeliveryFee ExtraDeliverFee Total DiscountFee PromotionCode 
     
     [self Align:ALIGN_LEFT];
     [self BigFont];
@@ -279,7 +303,23 @@
     [self Enter];
     [self BigFont];
     [self Align:ALIGN_LEFT];
+    [self WriteStr:[self GetFullStr:@"SubTotal" :[NSString stringWithFormat:@"$%@", orderData[@"SubTotal"]]]];
+    [self Enter];
+    [self BigFont];
+    [self Align:ALIGN_LEFT];
     [self WriteStr:[self GetFullStr:@"Delivery Fee" :[NSString stringWithFormat:@"$%@", orderData[@"DeliveryFee"]]]];
+    [self Enter];
+    [self BigFont];
+    [self Align:ALIGN_LEFT];
+    [self WriteStr:[self GetFullStr:@"Extra Deliver Fee" :[NSString stringWithFormat:@"$%@", orderData[@"ExtraDeliverFee"]]]];
+    [self Enter];
+    [self BigFont];
+    [self Align:ALIGN_LEFT];
+    [self WriteStr:[self GetFullStr:@"Total Discount Fee" :[NSString stringWithFormat:@"$%@", orderData[@"DiscountFee"]]]];
+    [self Enter];
+    [self BigFont];
+    [self Align:ALIGN_LEFT];
+    [self WriteStr:[self GetFullStr:@"Promotion Code" :[NSString stringWithFormat:@"%@", orderData[@"PromotionCode"]]]];
     [self Enter];
     [self BigFont];
     [self Align:ALIGN_LEFT];
@@ -318,7 +358,6 @@
     [self Enter];
     
     [self CutPaper];
-    [self Beep];
 }
 
 - (NSString*)GetFullStr:(NSString*)left :(NSString*)right
@@ -349,13 +388,17 @@
     }
     emptyStr = [NSString stringWithFormat:@"%@%@", emptyStr, right];
     
+    NSLog(@"%@\n", emptyStr);
+    
     return emptyStr;
 }
 
 - (void)Align:(int)mod
 {
-    
     SerialGATT* gat = [SerialGATT share];
+    if (gat == nil) {
+        return;
+    }
     CBPeripheral* peripheral = gat.activePeripheral;
     Byte a[3] = { 0 };
     a[0] = 0x1B;
@@ -369,6 +412,9 @@
 - (void)Enter
 {
     SerialGATT* gat = [SerialGATT share];
+    if (gat == nil) {
+        return;
+    }
     CBPeripheral* peripheral = gat.activePeripheral;
     Byte a = 0x0A;
     
@@ -380,6 +426,9 @@
 {
     
     SerialGATT* gat = [SerialGATT share];
+    if (gat == nil) {
+        return;
+    }
     CBPeripheral* peripheral = gat.activePeripheral;
     Byte a[3] = { 0 };
     a[0] = 0x1B;
@@ -394,6 +443,9 @@
 {
     
     SerialGATT* gat = [SerialGATT share];
+    if (gat == nil) {
+        return;
+    }
     CBPeripheral* peripheral = gat.activePeripheral;
     Byte a[3] = { 0 };
     a[0] = 0x1B;
@@ -408,6 +460,9 @@
 {
     
     SerialGATT* gat = [SerialGATT share];
+    if (gat == nil) {
+        return;
+    }
     CBPeripheral* peripheral = gat.activePeripheral;
     Byte a[3] = { 0 };
     a[0] = 0x1B;
@@ -421,6 +476,9 @@
 - (void)CutPaper
 {
     SerialGATT* gat = [SerialGATT share];
+    if (gat == nil) {
+        return;
+    }
     CBPeripheral* peripheral = gat.activePeripheral;
     Byte a[3] = { 0 };
     a[0] = 0x1D;
@@ -434,6 +492,9 @@
 - (void)Beep
 {
     SerialGATT* gat = [SerialGATT share];
+    if (gat == nil) {
+        return;
+    }
     CBPeripheral* peripheral = gat.activePeripheral;
     Byte a[4] = { 0 };
     a[0] = 0x1B;
@@ -451,6 +512,9 @@
     NSData* data = [str dataUsingEncoding:gbkEncoding];
     
     SerialGATT* gat = [SerialGATT share];
+    if (gat == nil) {
+        return;
+    }
     CBPeripheral* peripheral = gat.activePeripheral;
     [gat write:peripheral data:data];
 }

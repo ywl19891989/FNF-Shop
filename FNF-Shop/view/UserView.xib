@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserView">
             <connections>
+                <outlet property="btn1" destination="rtx-1W-Ybf" id="6Q5-FQ-VBx"/>
+                <outlet property="btn2" destination="sXD-5V-l5l" id="vYp-Wp-Pea"/>
+                <outlet property="btn3" destination="HJL-iM-LSC" id="wRF-3s-QRG"/>
+                <outlet property="btn4" destination="slY-ik-he4" id="gbV-gJ-dUF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

@@ -10,6 +10,10 @@
 #import "APService.h"
 
 @interface UserView ()
+@property (weak, nonatomic) IBOutlet UIButton *btn1;
+@property (weak, nonatomic) IBOutlet UIButton *btn3;
+@property (weak, nonatomic) IBOutlet UIButton *btn2;
+@property (weak, nonatomic) IBOutlet UIButton *btn4;
 
 @end
 
@@ -31,12 +35,15 @@
     // Do any additional setup after loading the view from its nib.
     
     NSString* alias = [NetWorkManager GetUserName];
-    [APService setAlias:alias callbackSelector:@selector(OnSuccess) object:self];
+    [APService setTags:[NSSet setWithArray:@[@"123"]] alias:alias callbackSelector:@selector(tagsAliasCallback: tags:alias:) object:self];
+    
+    [self.btn3 setHidden:YES];
+    [self.btn4 setHidden:YES];
 }
 
-- (void)OnSuccess
+- (void)tagsAliasCallback:(int)iResCode tags:(NSSet*)tags alias:(NSString*)alias
 {
-    NSLog(@"set alias success!");
+    NSLog(@"set alias（%@）tags %@ %@!", alias, tags, iResCode == 0 ? @"Success" : @"Failed");
 }
 
 - (IBAction)OnClickBack:(id)sender
