@@ -167,9 +167,9 @@
     NSDictionary* curOrderInfo = [NetWorkManager GetCurOrderInfo];
     
     SerialGATT* gat = [SerialGATT share];
-//    if (gat.activePeripheral == nil) {
-//        [AppDelegate jumpToDeviceList];
-//    } else {
+    if (gat.activePeripheral == nil) {
+        [AppDelegate jumpToDeviceList];
+    } else {
     
         
         [NetWorkManager GetOrderPrintByID:curOrderInfo[@"ID"] WithSuccess:^(AFHTTPRequestOperation *operation, id data) {
@@ -204,7 +204,7 @@
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
         }];
-//    }
+    }
 }
 
 #define fullLine @"------------------------------------------------"
@@ -212,6 +212,14 @@
 - (void)PrintOrder:(NSDictionary*)orderData
 {
     [self Blank:3];
+    
+    
+    [self Align:ALIGN_CENTER];
+    [self BigFont];
+    [self Enter];
+    [self WriteStr:@"FNF"];
+    [self Enter];
+    [self Blank:1];
     
     [self Align:ALIGN_CENTER];
     [self BigFont];

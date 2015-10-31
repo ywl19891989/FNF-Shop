@@ -34,16 +34,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    NSString* alias = [NetWorkManager GetUserName];
-    [APService setTags:[NSSet setWithArray:@[@"123"]] alias:alias callbackSelector:@selector(tagsAliasCallback: tags:alias:) object:self];
-    
     [self.btn3 setHidden:YES];
     [self.btn4 setHidden:YES];
-}
-
-- (void)tagsAliasCallback:(int)iResCode tags:(NSSet*)tags alias:(NSString*)alias
-{
-    NSLog(@"set alias（%@）tags %@ %@!", alias, tags, iResCode == 0 ? @"Success" : @"Failed");
 }
 
 - (IBAction)OnClickBack:(id)sender

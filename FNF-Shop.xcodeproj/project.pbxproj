@@ -1511,7 +1511,7 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "FNF-Shop";
-				PROVISIONING_PROFILE = "5994c72d-dbae-4369-aa83-d9a2d1ca990a";
+				PROVISIONING_PROFILE = "66e005f2-ad31-4461-9f73-000013bdc13b";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1546,7 +1546,7 @@
 					"$(PROJECT_DIR)/FNF-Shop/libs/JPush",
 				);
 				PRODUCT_NAME = "FNF-Shop";
-				PROVISIONING_PROFILE = "c43c1669-b2f5-4f5a-b96a-5e414d1a0125";
+				PROVISIONING_PROFILE = "5ecd83dd-74d1-4cd6-88de-1ed9d54ae583";
 				VALID_ARCHS = "armv7 armv7s arm64";
 				WRAPPER_EXTENSION = app;
 			};

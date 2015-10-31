@@ -9,6 +9,7 @@
 #import "MainView.h"
 #import "UzysAssetsPickerController.h"
 #import "cell/OrderListCell.h"
+#import "APService.h"
 
 @interface MainView ()
 
@@ -39,7 +40,16 @@
 }
 
 - (IBAction)OnClickBack:(id)sender {
+    
+    
+    NSString* alias = [NetWorkManager GetUserName];
+    [APService setAlias:alias callbackSelector:@selector(tagsAliasCallback:tags:alias:) object:self];
+    
     [AppDelegate jumpToUserView];
+}
+
+- (void)tagsAliasCallback:(int)iResCode tags:(NSSet*)tags alias:(NSString*)alias {
+    NSLog(@"rescode: %d, \ntags: %@, \nalias: %@\n", iResCode, tags , alias);
 }
 
 - (IBAction)OnClickSetting:(id)sender {
