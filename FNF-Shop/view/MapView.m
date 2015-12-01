@@ -30,6 +30,7 @@
     [super viewDidLoad];
     
     NSString* urlStr = [NSString stringWithFormat:@"https://www.google.com/maps/?q=%@", [NetWorkManager GetOrderAddr]];
+    urlStr = [urlStr stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL* url = [NSURL URLWithString:urlStr];
     [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
 }
