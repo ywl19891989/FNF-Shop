@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>61714A1F-DCD0-4B28-8D90-D48598C3F768</string>
 	<key>IDESourceControlProjectName</key>
-	<string>FNF-Shop</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>32C54D7222E8DD17971CB1668B445AEB8C9FA04F</key>
 		<string>github.com:ywl19891989/FNF-Shop.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>FNF-Shop.xcodeproj</string>
+	<string>FNF-Shop.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>32C54D7222E8DD17971CB1668B445AEB8C9FA04F</key>
