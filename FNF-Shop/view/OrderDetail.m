@@ -278,7 +278,9 @@
         NSDictionary* dealData = [dealArr objectAtIndex:i];
         [self BigFont];
         [self Align:ALIGN_LEFT];
-        NSString* str = [NSString stringWithFormat:@"x%@     $%@", dealData[@"BuyQty"], dealData[@"Price"]];
+        int num = (int)[dealData[@"BuyQty"] integerValue];
+        float price = [dealData[@"Price"] floatValue];
+        NSString* str = [NSString stringWithFormat:@"x%d     $%.2f", num, price];
         [self WriteStr:[self GetFullStr:dealData[@"ProductName"] :str]];
         [self Enter];
         
@@ -391,9 +393,12 @@
         }
     }
     
-    for (int i = 0; i < [fullLine length] - leftLen - rightLen; i++) {
+    int fullLen = [fullLine length];
+    
+    for (int i = 0; i < fullLen - leftLen - rightLen; i++) {
         emptyStr = [NSString stringWithFormat:@"%@ ", emptyStr];
     }
+    
     emptyStr = [NSString stringWithFormat:@"%@%@", emptyStr, right];
     
     NSLog(@"%@\n", emptyStr);
