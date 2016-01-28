@@ -12,6 +12,8 @@
 	<dict>
 		<key>32C54D7222E8DD17971CB1668B445AEB8C9FA04F</key>
 		<string>github.com:ywl19891989/FNF-Shop.git</string>
+		<key>A82F44712A67A86A199700694F47B304D3DB2433</key>
+		<string>github.com:ywl19891989/FNF-Drivers.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>FNF-Shop.xcodeproj</string>
@@ -19,6 +21,8 @@
 	<dict>
 		<key>32C54D7222E8DD17971CB1668B445AEB8C9FA04F</key>
 		<string>../..</string>
+		<key>A82F44712A67A86A199700694F47B304D3DB2433</key>
+		<string>../../../FNF-Drives</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>github.com:ywl19891989/FNF-Shop.git</string>
@@ -28,6 +32,14 @@
 	<string>32C54D7222E8DD17971CB1668B445AEB8C9FA04F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>A82F44712A67A86A199700694F47B304D3DB2433</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FNF-Drives</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
